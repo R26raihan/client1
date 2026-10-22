@@ -21,8 +21,8 @@ function applyTheme(theme: ThemeColors) {
   root.style.setProperty("--surface-muted", "color-mix(in srgb, var(--glass-color) 35%, var(--background))");
   root.style.setProperty("--border-subtle", "color-mix(in srgb, var(--primary) 25%, var(--background))");
   root.style.setProperty("--muted-foreground", "color-mix(in srgb, var(--foreground) 82%, var(--background))");
-  root.style.setProperty("--accent", "color-mix(in srgb, var(--primary) 75%, #000000)");
-  root.style.setProperty("--accent-foreground", "#ffffff");
+  root.style.setProperty("--accent", theme.foreground);
+  root.style.setProperty("--accent-foreground", contrastText(theme.foreground));
 }
 
 const fields = [
@@ -69,7 +69,7 @@ export default function ThemeSettings() {
         <fieldset className="space-y-4"><legend className="mb-4 text-base font-semibold">Sesuaikan warna</legend>{fields.map(field => <label key={field.key} htmlFor={`theme-${field.key}`} className="flex cursor-pointer flex-wrap items-center justify-between gap-3"><span><span className="block text-lg font-medium">{field.label}</span><span className="text-base text-muted-foreground">{field.description}</span></span><span className="flex items-center gap-2"><span className="font-mono text-[15px] text-muted-foreground">{theme[field.key].toUpperCase()}</span><input id={`theme-${field.key}`} type="color" value={theme[field.key]} onChange={event => update({ ...theme, [field.key]: event.target.value })} className="h-12 w-14 cursor-pointer rounded-lg border border-border-subtle bg-transparent p-1" /></span></label>)}</fieldset>
         <label htmlFor="theme-opacity" className="block"><span className="mb-3 flex items-center justify-between text-lg font-medium"><span>Kepekatan glass</span><span className="text-primary">{theme.opacity}%</span></span><input id="theme-opacity" type="range" min={60} max={100} step={1} value={theme.opacity} onChange={event => update({ ...theme, opacity: Number(event.target.value) })} className="h-12 w-full accent-primary" /><span className="mt-1 flex justify-between text-[15px] text-muted-foreground"><span>Lebih transparan</span><span>Lebih solid</span></span></label>
         <div className="rounded-xl border border-border-subtle bg-surface-muted/50 p-3 text-base leading-relaxed text-muted-foreground">Perubahan langsung terlihat dan tersimpan hanya di browser ini.</div>
-        <button type="button" onClick={() => update({ ...defaultTheme })} className="flex w-full items-center justify-center gap-2 rounded-xl border border-border-subtle px-4 py-3 text-base font-medium hover:bg-surface-muted"><RotateCcw size={15} />Kembalikan tema Latte</button>
+        <button type="button" onClick={() => update({ ...defaultTheme })} className="flex w-full items-center justify-center gap-2 rounded-xl border border-border-subtle px-4 py-3 text-base font-medium hover:bg-surface-muted"><RotateCcw size={15} />Kembalikan tema {themePresets[0].name}</button>
         <p role="status" className="min-h-4 text-center text-base text-muted-foreground">{notice}</p>
       </div>
     </dialog>

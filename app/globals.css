@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fbf6f0;
-  --foreground: #302219;
+  --background: #ffffff;
+  --foreground: #141414;
   --surface: #ffffff;
-  --surface-muted: #f3e7d9;
-  --border-subtle: #dfcebd;
-  --primary: #946b4c;
-  --primary-foreground: #fff8f0;
-  --accent: #604431;
-  --accent-foreground: #fcf5ed;
-  --muted-foreground: #665344;
-  --glass-color: #e7ccb0;
+  --surface-muted: #f4f4f2;
+  --border-subtle: #dedcd6;
+  --primary: #b28a35;
+  --primary-foreground: #000000;
+  --accent: #141414;
+  --accent-foreground: #ffffff;
+  --muted-foreground: #4b4b4b;
+  --glass-color: #f1ead8;
   --glass-opacity: 85%;
-  --glass-foreground: #302219;
+  --glass-foreground: #141414;
   --glass-fill: color-mix(in srgb, var(--glass-color) var(--glass-opacity), transparent);
-  --glass-header: color-mix(in srgb, color-mix(in srgb, var(--glass-color) 18%, var(--background)) max(85%, var(--glass-opacity)), transparent);
+  --glass-header: color-mix(in srgb, color-mix(in srgb, var(--glass-color) 25%, var(--surface)) calc(var(--glass-opacity) * 0.6), transparent);
   --glass-card: color-mix(in srgb, color-mix(in srgb, var(--glass-color) 35%, var(--surface)) calc(var(--glass-opacity) * 0.7), transparent);
   --glass-card-hover: color-mix(in srgb, color-mix(in srgb, var(--glass-color) 35%, var(--surface)) calc(var(--glass-opacity) * 0.85), transparent);
   --glass-edge: color-mix(in srgb, var(--surface) 65%, var(--glass-color));
   --glass-shadow: 0 12px 36px -18px color-mix(in srgb, var(--primary) 35%, transparent), inset 0 1px 0 color-mix(in srgb, var(--surface) 75%, transparent);
-  --glass-popover: color-mix(in srgb, color-mix(in srgb, var(--glass-color) 12%, var(--background)) 96%, transparent);
+  --glass-popover: color-mix(in srgb, color-mix(in srgb, var(--glass-color) 20%, var(--surface)) calc(40% + var(--glass-opacity) * 0.45), transparent);
 }
 
 @theme inline {

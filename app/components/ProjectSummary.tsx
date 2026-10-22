@@ -1,13 +1,14 @@
-import { ArrowUpRight, Armchair, Building2, House, Layers, Palmtree, RefreshCcw } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { siteConfig } from "../lib/site-config";
 
 const services = [
-  { icon: House, label: "Jasa Desain Rumah", href: "#desain-rumah" },
-  { icon: Palmtree, label: "Jasa Desain Villa", href: "#desain-villa" },
-  { icon: Armchair, label: "Jasa Desain Interior", href: "#desain-interior" },
-  { icon: Layers, label: "Jasa Desain Rumah + Interior", href: "#desain-rumah-interior" },
-  { icon: Building2, label: "Jasa Desain Bangunan Lain", href: "#desain-komersial" },
-  { icon: RefreshCcw, label: "Jasa Renovasi Rumah", href: "#renovasi-rumah" },
+  { image: "/images/modern.jpg", alt: "Ilustrasi eksterior rumah modern", label: "Jasa Desain Rumah", href: "#desain-rumah" },
+  { image: "/images/mediterranean-villa.jpg", alt: "Ilustrasi villa dengan kolam renang", label: "Jasa Desain Villa", href: "#desain-villa" },
+  { image: "/images/interior.jpg", alt: "Ilustrasi desain interior ruang keluarga", label: "Jasa Desain Interior", href: "#desain-interior" },
+  { image: "/images/testimonial-home-dewi.jpg", alt: "Ilustrasi keselarasan arsitektur dan interior rumah", label: "Jasa Desain Rumah + Interior", href: "#desain-rumah-interior" },
+  { image: "/images/industrial-loft.jpg", alt: "Ilustrasi ruang bangunan dengan mezzanine", label: "Jasa Desain Bangunan Lain", href: "#desain-komersial" },
+  { image: "/images/construction-structure.jpg", alt: "Ilustrasi pekerjaan konstruksi dan renovasi", label: "Jasa Renovasi Rumah", href: "#renovasi-rumah" },
 ];
 
 export default function ProjectSummary() {
@@ -23,10 +24,9 @@ export default function ProjectSummary() {
       </div>
     </div>
     <nav className="mx-auto grid max-w-[1280px] grid-cols-6 gap-3 px-6 pb-8 max-[900px]:grid-cols-3 max-[900px]:gap-2.5 max-[600px]:grid-cols-2 max-[600px]:px-5 max-[600px]:pb-9" aria-label="Pilihan jasa desain">
-      {services.map(({ icon: Icon, label, href }) => <a data-motion="card" key={href} href={href} className="relative flex min-h-[180px] flex-col items-center justify-center gap-[18px] rounded-2xl border border-glass-edge bg-glass-card px-[15px] py-6 text-center text-glass-foreground/80 shadow-glass backdrop-blur-[28px] backdrop-saturate-[1.8] transition-[transform,background-color,border-color] duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 active:scale-95 motion-reduce:hover:translate-y-0 motion-reduce:focus-visible:translate-y-0 motion-reduce:active:scale-100 hover:border-white/80 hover:bg-glass-card-hover motion-reduce:transition-none max-[900px]:ml-0 max-[600px]:min-h-[170px] max-[600px]:px-3.5 max-[600px]:py-[22px] [&>span]:max-w-[150px] [&>span]:text-base [&>span]:leading-relaxed [&>span]:font-medium [&>span]:tracking-[.5px] [&>span]:text-glass-foreground ">
-        <Icon size={28} strokeWidth={1.35} aria-hidden="true" />
-        <span>{label}</span>
-        <ArrowUpRight size={15} aria-hidden="true" className="absolute top-3 right-3 opacity-65" />
+      {services.map(({ image, alt, label, href }) => <a data-motion="card" key={href} href={href} className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-glass-edge bg-glass-card text-glass-foreground shadow-glass backdrop-blur-[28px] backdrop-saturate-[1.8] transition-[transform,background-color,border-color] duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 active:scale-95 hover:border-white/80 hover:bg-glass-card-hover motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:focus-visible:translate-y-0 motion-reduce:active:scale-100">
+        <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface-muted"><Image src={image} alt={alt} fill sizes="(max-width: 600px) 50vw, (max-width: 900px) 33vw, 210px" className="object-cover transition-transform duration-500 group-hover:scale-[1.05] group-focus-visible:scale-[1.05] motion-reduce:transition-none motion-reduce:group-hover:scale-100 motion-reduce:group-focus-visible:scale-100" /></div>
+        <div className="flex flex-1 items-center justify-between gap-2 px-3.5 py-5"><span className="text-base leading-relaxed font-semibold">{label}</span><ArrowUpRight size={18} aria-hidden="true" className="shrink-0 opacity-75 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0" /></div>
       </a>)}
     </nav>
   </section>;

@@ -7,12 +7,13 @@ export type ThemeColors = {
 };
 
 export const themePresets: { name: string; colors: ThemeColors }[] = [
-  { name: "Latte", colors: { primary: "#946b4c", background: "#fbf6f0", foreground: "#302219", glass: "#e7ccb0", opacity: 85 } },
-  { name: "Sand", colors: { primary: "#8b7355", background: "#faf8f2", foreground: "#342f24", glass: "#e8ddc5", opacity: 85 } },
-  { name: "Rosewood", colors: { primary: "#98685b", background: "#fcf5f1", foreground: "#392720", glass: "#e8c9bd", opacity: 85 } },
+  { name: "White Gold", colors: { primary: "#b28a35", background: "#ffffff", foreground: "#141414", glass: "#f1ead8", opacity: 85 } },
+  { name: "Champagne", colors: { primary: "#a47c28", background: "#fffefa", foreground: "#181818", glass: "#f5efdf", opacity: 85 } },
+  { name: "Black Gold", colors: { primary: "#80621c", background: "#ffffff", foreground: "#080808", glass: "#e9e7df", opacity: 85 } },
 ];
+
 export const defaultTheme = themePresets[0].colors;
-export const themeStorageKey = "loka-theme-v1";
+export const themeStorageKey = "loka-theme-v2";
 
 export function parseTheme(value: unknown): ThemeColors | null {
   if (!value || typeof value !== "object") return null;
