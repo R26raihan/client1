@@ -38,7 +38,7 @@ export default async function ProjectDetail({ params }: PageProps<"/portofolio/[
     </div>
 
     <div className="mx-auto max-w-7xl px-6 py-10 sm:px-10 sm:py-14">
-      <nav aria-label="Breadcrumb" className="mb-7 flex flex-wrap items-center gap-3 text-base text-muted-foreground"><Link href="/" className="hover:text-primary">Beranda</Link><span aria-hidden="true">/</span><Link href="/#portofolio" className="hover:text-primary">Portofolio</Link><span aria-hidden="true">/</span><span aria-current="page">{project.title}</span></nav>
+      <nav aria-label="Breadcrumb" className="mb-7 flex flex-wrap items-center gap-3 text-base text-muted-foreground"><Link href="/" className="hover:text-primary">Beranda</Link><span aria-hidden="true">/</span><Link href="/portofolio" className="hover:text-primary">Portofolio</Link><span aria-hidden="true">/</span><span aria-current="page">{project.title}</span></nav>
       <div className="flex flex-col justify-between gap-7 lg:flex-row lg:items-end">
         <div><p className="mb-4 text-lg font-semibold text-primary">ARSITEKTUR & RUANG</p><h1 className="max-w-4xl font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">{project.title}</h1><div className="mt-6 flex flex-wrap gap-6 text-lg text-muted-foreground"><span className="inline-flex items-center gap-2"><MapPin size={21} aria-hidden="true" />{project.city}</span><span className="inline-flex items-center gap-2"><Ruler size={21} aria-hidden="true" />{project.area} m²</span><span>{project.category}</span></div></div>
         <a href={consultation} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-14 shrink-0 items-center justify-center gap-4 rounded-xl bg-primary px-6 py-4 text-lg font-semibold text-primary-foreground hover:brightness-110">Pesan jasa arsitek <ArrowUpRight size={22} aria-hidden="true" /></a>
@@ -48,7 +48,7 @@ export default async function ProjectDetail({ params }: PageProps<"/portofolio/[
     <nav aria-label="Bagian detail proyek" className="sticky top-[120px] z-30 border-y border-border-subtle bg-background/95 px-6 backdrop-blur-xl sm:px-10">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 overflow-x-auto py-3">
         <div className="flex shrink-0 gap-2 sm:gap-5">{[["#ringkasan", "Detail"], ...(details ? [["#spesifikasi", "Spesifikasi"], ["#ruang-per-lantai", "Ruang per lantai"], ["#tim-proyek", "Tim perancang"]] : []), ["#galeri", "Foto ruangan"], ["#video", "Video"], ...(hasTour ? [["#tur-360", "Tur 360°"]] : [])].map(([href, label]) => <a key={href} href={href} className="inline-flex min-h-12 items-center whitespace-nowrap rounded-full px-4 text-base font-medium hover:bg-primary/10 hover:text-primary">{label}</a>)}</div>
-        <Link href="/#portofolio" className="hidden min-h-12 shrink-0 items-center gap-2 text-base font-medium text-primary lg:inline-flex"><ArrowLeft size={18} aria-hidden="true" />Semua karya</Link>
+        <Link href="/portofolio" className="hidden min-h-12 shrink-0 items-center gap-2 text-base font-medium text-primary lg:inline-flex"><ArrowLeft size={18} aria-hidden="true" />Semua karya</Link>
       </div>
     </nav>
 

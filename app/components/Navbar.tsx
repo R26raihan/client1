@@ -7,14 +7,14 @@ import { siteConfig, waLink } from "../lib/site-config";
 
 const menuGroups = [
   { label: "Portofolio", items: [
-    { label: "Semua Portofolio", href: "/#portofolio" },
-    ...["Modern", "Tropis", "Klasik", "Industrial", "Mediteran", "American", "Villa", "Interior"].map(category => ({ label: `Desain ${category}`, href: `/?kategori=${category}#portofolio` })),
+    { label: "Semua Portofolio", href: "/portofolio" },
+    ...["Modern", "Tropis", "Klasik", "Industrial", "Mediteran", "American", "Villa", "Interior"].map(category => ({ label: `Desain ${category}`, href: `/portofolio?kategori=${category}` })),
   ] },
   { label: "3D VR & Hasil", items: [
-    { label: "Virtual Reality 360°", href: "/#virtual-reality" },
-    { label: "Video 3D Desain", href: "/#video-3d" },
-    { label: "Video Progres Pembangunan", href: "/#progres-pembangunan" },
-    { label: "Hasil Konstruksi", href: "/#hasil-konstruksi" },
+    { label: "Virtual Reality 360°", href: "/vr" },
+    { label: "Video 3D Desain", href: "/video-3d" },
+    { label: "Video Progres Pembangunan", href: "/progres-pembangunan" },
+    { label: "Hasil Konstruksi", href: "/hasil-konstruksi" },
   ] },
   { label: "Harga & Layanan", items: [
     { label: "Jasa Desain Rumah", href: "/#desain-rumah" },
@@ -85,7 +85,7 @@ export default function Navbar() {
       </div>
     </div>
     {searchOpen && <div data-motion="menu" id="header-search" className="[--foreground:#141414] [--muted-foreground:#525252] [--surface-muted:#f4f4f4] [color-scheme:light] absolute top-[calc(100%+10px)] right-[max(24px,calc((100%-1280px)/2))] w-[min(600px,calc(100%-48px))] rounded-2xl border border-glass-edge bg-white p-[22px] text-[#141414] shadow-[0_20px_55px_#49301e2b,inset_0_1px_0_#ffffff80] backdrop-blur-[40px] backdrop-saturate-[1.8] max-[600px]:top-[calc(100%+8px)] max-[600px]:right-3 max-[600px]:w-[calc(100%-24px)] max-[600px]:p-4">
-      <form action="/#portofolio" method="get" role="search" aria-label="Pencarian portofolio">
+      <form action="/portofolio" method="get" role="search" aria-label="Pencarian portofolio">
         <div className="mb-4 flex items-center justify-between gap-4 [&>label]:text-lg [&>label]:leading-normal [&>label]:font-semibold">
           <label htmlFor="site-search">Temukan inspirasi Anda</label>
           <button type="button" className="inline-flex size-12 shrink-0 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent p-0 text-muted-foreground hover:bg-surface-muted hover:text-foreground" aria-label="Tutup pencarian" onClick={() => { setSearchOpen(false); searchButton.current?.focus(); }}><X size={18} /></button>
