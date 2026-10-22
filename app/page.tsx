@@ -8,6 +8,7 @@ import Process from "./components/Process";
 import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
+import ArchitectComparison from "./components/ArchitectComparison";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <ProjectSummary />
       <Portfolio />
+      <ArchitectComparison />
       <Deliverables />
       <Testimonials />
       <Services />

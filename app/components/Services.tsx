@@ -1,4 +1,5 @@
 import { Armchair, BadgeCheck, Box, Calculator, Clock3, HardHat, House, RefreshCcw, ShieldCheck, Wallet } from "lucide-react";
+import { darkSectionTheme } from "../lib/theme";
 import { waLink } from "../lib/site-config";
 import SectionHeading from "./SectionHeading";
 
@@ -22,7 +23,7 @@ const strengths = [
 
 export default function Services() {
   return (
-    <section id="layanan" className="bg-linear-to-b from-background via-surface-muted/70 to-background py-20 sm:py-28">
+    <section id="layanan" className={`bg-accent py-20 text-foreground sm:py-28 ${darkSectionTheme}`}>
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading eyebrow="Layanan Kami" title="Dari gagasan pertama hingga rumah terasa sempurna" description="Layanan desain dan pembangunan yang saling terhubung, disesuaikan dengan kebutuhan serta anggaran Anda." />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

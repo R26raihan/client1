@@ -1,3 +1,4 @@
+import { darkSectionTheme } from "../lib/theme";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
@@ -17,7 +18,7 @@ const deliverables = [
 ];
 
 export default function Deliverables() {
-  return <section id="hasil-desain" className="border-y border-border-subtle/60 bg-linear-to-b from-background via-surface-muted/40 to-background px-6 py-20 sm:px-8 sm:py-24 lg:px-10">
+  return <section id="hasil-desain" className={`bg-accent px-6 py-20 text-foreground sm:px-8 sm:py-24 lg:px-10 ${darkSectionTheme}`}>
     <div className="w-full">
       <div className="grid gap-6 lg:grid-cols-2 lg:items-end lg:gap-12">
         <div>
@@ -27,7 +28,7 @@ export default function Deliverables() {
         <p data-motion="text" className="max-w-[440px] text-lg leading-8 text-muted-foreground lg:justify-self-end lg:pb-1">Dari gambaran awal hingga detail teknis, kenali hasil perancangan yang membantu Anda mewujudkan rumah impian.</p>
       </div>
       <ul className="mt-12 grid grid-cols-1 gap-5 min-[480px]:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-6">
-        {deliverables.map(({ image, alt, title, description }, index) => <li data-motion="card" key={title} className="group relative overflow-hidden rounded-2xl border border-glass-edge bg-glass-card shadow-glass backdrop-blur-[28px] backdrop-saturate-[1.8] transition-[transform,box-shadow,border-color,background-color] duration-300 ease-out hover:z-10 hover:-translate-y-1 hover:scale-[1.03] hover:border-primary/50 hover:bg-glass-card-hover hover:shadow-[0_18px_40px_-12px_#49301e40] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100">
+        {deliverables.map(({ image, alt, title, description }, index) => <li data-motion="card" key={title} className="group relative overflow-hidden rounded-2xl border border-glass-edge bg-glass-card shadow-glass backdrop-blur-[28px] backdrop-saturate-[1.8] transition-[transform,box-shadow,border-color,background-color] duration-300 ease-out hover:z-10 hover:-translate-y-1 hover:scale-[1.03] hover:border-primary/50 hover:bg-glass-card-hover hover:shadow-[0_18px_40px_-12px_#00000055] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100">
           <div className="relative aspect-[8/5] overflow-hidden bg-surface-muted">
             <Image src={image} alt={alt} fill sizes="(max-width: 479px) 100vw, (max-width: 1023px) 50vw, (max-width: 1535px) 33vw, 25vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100" />
             <span className="absolute top-3 left-3 flex size-8 items-center justify-center rounded-full border border-white/50 bg-background/85 text-[15px] font-semibold text-primary backdrop-blur-[18px] backdrop-saturate-[1.8]" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>

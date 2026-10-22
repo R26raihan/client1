@@ -1,5 +1,6 @@
 "use client";
 
+import { darkSectionTheme } from "../lib/theme";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import SectionHeading from "./SectionHeading";
@@ -17,7 +18,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-background py-20 sm:py-28">
+    <section id="faq" className={`bg-accent py-20 text-foreground sm:py-28 ${darkSectionTheme}`}>
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading eyebrow="Pertanyaan Umum" title="Mari mulai dengan pemahaman yang sama" description="Jawaban awal untuk membantu Anda mempersiapkan perjalanan merancang dan membangun rumah." />
         <div className="mx-auto mt-12 max-w-3xl space-y-3">

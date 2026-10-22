@@ -1,5 +1,6 @@
 "use client";
 
+import { darkSectionTheme } from "../lib/theme";
 import { useState } from "react";
 import Image from "next/image";
 import { Bookmark, Heart, MessageCircle } from "lucide-react";
@@ -20,7 +21,7 @@ export default function Testimonials() {
   const [liked, setLiked] = useState<string[]>([]);
   const [saved, setSaved] = useState<string[]>([]);
 
-  return <section id="testimoni" aria-labelledby="testimonials-title" className="w-full bg-surface-muted/45 px-6 py-20 sm:px-8 sm:py-24 lg:px-10">
+  return <section id="testimoni" aria-labelledby="testimonials-title" className="w-full bg-background px-6 py-20 sm:px-8 sm:py-24 lg:px-10">
     <div className="grid gap-6 lg:grid-cols-2 lg:items-end lg:gap-12">
       <h2 data-motion="title" id="testimonials-title" className="font-serif text-[clamp(34px,3.8vw,64px)] leading-[1.12] font-normal tracking-tight">Testimoni Klien</h2>
       <div data-motion="text" className="max-w-[440px] lg:justify-self-end"><p className="text-lg leading-8 text-foreground">Cerita tentang proses merancang, berdiskusi, dan mewujudkan rumah bersama tim kami.</p><p className="mt-3 text-base leading-7 text-muted-foreground">Contoh testimoni untuk pratinjau. Nama dan ulasan belum terverifikasi; foto profil serta hunian merupakan ilustrasi.</p></div>
@@ -29,7 +30,7 @@ export default function Testimonials() {
       {testimonials.map(item => {
         const isLiked = liked.includes(item.name);
         const isSaved = saved.includes(item.name);
-        return <div key={item.name} data-motion="card" className="h-full min-w-0"><article aria-label={`Contoh testimoni ${item.name}`} className="group relative h-full min-w-0 overflow-hidden rounded-2xl border border-glass-edge bg-glass-card text-foreground shadow-glass backdrop-blur-[28px] backdrop-saturate-[1.8] transition-[transform,border-color,background-color] duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] hover:z-10 hover:-translate-y-1.5 hover:border-primary/40 hover:bg-glass-card-hover motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100">
+        return <div key={item.name} data-motion="card" className="h-full min-w-0"><article aria-label={`Contoh testimoni ${item.name}`} className={`group relative h-full min-w-0 bg-accent ${darkSectionTheme} overflow-hidden rounded-2xl border border-glass-edge text-foreground shadow-glass backdrop-blur-[28px] backdrop-saturate-[1.8] transition-[transform,border-color,background-color] duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] hover:z-10 hover:-translate-y-1.5 hover:border-primary/65 motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100`}>
           <header className="flex items-center gap-3 px-4 py-4 sm:px-5">
             <div className="relative size-11 shrink-0 overflow-hidden rounded-full bg-surface-muted"><Image src={item.avatar} alt={`Foto profil ilustratif untuk ${item.name}`} fill sizes="44px" className="object-cover" /></div>
             <div className="min-w-0 break-words"><h3 className="text-lg font-semibold">{item.name}</h3><p className="mt-0.5 text-base text-muted-foreground">{item.city} · Ilustrasi profil</p></div>

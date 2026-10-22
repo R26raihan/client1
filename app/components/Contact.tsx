@@ -1,5 +1,6 @@
 "use client";
 
+import { darkSectionTheme } from "../lib/theme";
 import { type FormEvent, useState } from "react";
 import { ArrowUpRight, Clock3, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { siteConfig, waLink } from "../lib/site-config";
@@ -16,7 +17,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="kontak" className="bg-surface-muted py-20 sm:py-28">
+    <section id="kontak" className="bg-background py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading eyebrow="Hubungi Kami" title="Rumah impian dimulai dari sebuah percakapan" description="Ceritakan rencana Anda. Mari temukan solusi ruang dan langkah pembangunan yang paling sesuai." align="left" />
         <div className="mt-12 grid gap-8 lg:grid-cols-[1.2fr_1fr]">
@@ -30,7 +31,7 @@ export default function Contact() {
             <button type="submit" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 min-h-14 text-lg font-semibold text-primary-foreground transition-[opacity,transform] duration-200 hover:-translate-y-0.5 hover:opacity-90 active:scale-[.98] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:active:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">Kirim via WhatsApp<ArrowUpRight size={18} aria-hidden="true" /></button>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">WhatsApp akan terbuka dengan pesan yang sudah terisi. Anda dapat meninjaunya sebelum mengirim.</p>
           </form>
-          <aside data-motion="text" className="rounded-3xl border border-glass-edge bg-glass-card shadow-glass backdrop-blur-[28px] backdrop-saturate-[1.8] p-6 sm:p-8">
+          <aside data-motion="text" className={`rounded-3xl border border-primary/35 bg-accent p-6 text-foreground shadow-glass backdrop-blur-[28px] sm:p-8 ${darkSectionTheme}`}>
             <h3 className="font-serif text-2xl font-medium">Senang bisa mengenal rencana Anda</h3>
             <p className="mt-3 text-lg leading-relaxed text-muted-foreground">Hubungi tim kami untuk membahas layanan dan jadwal konsultasi.</p>
             <dl className="my-8 space-y-6">
@@ -41,7 +42,7 @@ export default function Contact() {
                 { icon: Clock3, label: "Jam Operasional", value: siteConfig.operatingHours },
               ].map(({ icon: Icon, label, value, href }) => <div key={label} className="flex gap-4"><Icon size={20} className="mt-1 shrink-0 text-primary" aria-hidden="true" /><div><dt className="mb-1 text-lg font-semibold">{label}</dt><dd className="text-lg leading-relaxed break-words text-muted-foreground">{href ? <a href={href} className="hover:text-primary hover:underline">{value}</a> : value}</dd></div></div>)}
             </dl>
-            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-lg font-semibold text-accent-foreground transition-[opacity,transform] duration-200 hover:-translate-y-0.5 hover:opacity-90 active:scale-[.98] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:active:scale-100"><MessageCircle size={18} aria-hidden="true" />Chat via WhatsApp</a>
+            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-lg font-semibold text-primary-foreground transition-[opacity,transform] duration-200 hover:-translate-y-0.5 hover:opacity-90 active:scale-[.98] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:active:scale-100"><MessageCircle size={18} aria-hidden="true" />Chat via WhatsApp</a>
           </aside>
         </div>
       </div>
