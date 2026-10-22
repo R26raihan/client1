@@ -30,7 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="id"
       className={`${inter.variable} ${fraunces.variable} h-full scroll-smooth antialiased motion-reduce:scroll-auto`}
     >
-      <body className="flex min-h-full flex-col bg-background font-sans text-foreground selection:bg-primary selection:text-primary-foreground [&_section]:scroll-mt-36 [&_article]:scroll-mt-36 [&_:focus-visible]:outline-2 [&_:focus-visible]:outline-offset-4 [&_:focus-visible]:outline-primary">
+      <body className="flex min-h-full flex-col bg-background font-sans text-lg leading-relaxed text-foreground selection:bg-primary selection:text-primary-foreground [&_section]:scroll-mt-36 [&_article]:scroll-mt-36 [&_:focus-visible]:outline-2 [&_:focus-visible]:outline-offset-4 [&_:focus-visible]:outline-primary">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

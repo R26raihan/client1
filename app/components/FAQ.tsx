@@ -24,9 +24,9 @@ export default function FAQ() {
           {questions.map((item, index) => {
             const isOpen = openIndex === index;
             return (
-              <div data-motion="card" key={item.question} className="overflow-hidden rounded-2xl border border-[#c9ac91]/30 bg-white/55 shadow-[0_10px_35px_#49301e08,inset_0_1px_0_#ffffffb3] backdrop-blur-md">
+              <div data-motion="card" key={item.question} className="overflow-hidden rounded-2xl border border-glass-edge bg-glass-card shadow-glass backdrop-blur-[28px] backdrop-saturate-[1.8]">
                 <h3><button id={`faq-question-${index}`} type="button" aria-expanded={isOpen} aria-controls={`faq-answer-${index}`} onClick={() => setOpenIndex(isOpen ? null : index)} className="flex w-full items-center justify-between gap-5 p-6 text-left font-medium transition-colors duration-200 hover:bg-primary/5 motion-reduce:transition-none focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-primary">{item.question}<ChevronDown size={20} className={`shrink-0 text-primary transition-transform duration-300 motion-reduce:transition-none ${isOpen ? "rotate-180" : ""}`} aria-hidden="true" /></button></h3>
-                <div data-motion-panel id={`faq-answer-${index}`} role="region" aria-labelledby={`faq-question-${index}`} hidden={!isOpen} className="px-6 pb-6 text-sm leading-relaxed text-muted-foreground">{item.answer}</div>
+                <div data-motion-panel id={`faq-answer-${index}`} role="region" aria-labelledby={`faq-question-${index}`} hidden={!isOpen} className="px-6 pb-6 text-lg leading-relaxed text-muted-foreground">{item.answer}</div>
               </div>
             );
           })}

@@ -10,12 +10,16 @@
   --primary-foreground: #fff8f0;
   --accent: #604431;
   --accent-foreground: #fcf5ed;
-  --muted-foreground: #766354;
+  --muted-foreground: #665344;
   --glass-color: #e7ccb0;
   --glass-opacity: 85%;
   --glass-foreground: #302219;
   --glass-fill: color-mix(in srgb, var(--glass-color) var(--glass-opacity), transparent);
   --glass-header: color-mix(in srgb, color-mix(in srgb, var(--glass-color) 18%, var(--background)) max(85%, var(--glass-opacity)), transparent);
+  --glass-card: color-mix(in srgb, color-mix(in srgb, var(--glass-color) 35%, var(--surface)) calc(var(--glass-opacity) * 0.7), transparent);
+  --glass-card-hover: color-mix(in srgb, color-mix(in srgb, var(--glass-color) 35%, var(--surface)) calc(var(--glass-opacity) * 0.85), transparent);
+  --glass-edge: color-mix(in srgb, var(--surface) 65%, var(--glass-color));
+  --glass-shadow: 0 12px 36px -18px color-mix(in srgb, var(--primary) 35%, transparent), inset 0 1px 0 color-mix(in srgb, var(--surface) 75%, transparent);
   --glass-popover: color-mix(in srgb, color-mix(in srgb, var(--glass-color) 12%, var(--background)) 96%, transparent);
 }
 
@@ -34,6 +38,10 @@
   --color-glass-header: var(--glass-header);
   --color-glass-popover: var(--glass-popover);
   --color-glass-foreground: var(--glass-foreground);
+  --color-glass-card: var(--glass-card);
+  --color-glass-card-hover: var(--glass-card-hover);
+  --color-glass-edge: var(--glass-edge);
+  --shadow-glass: var(--glass-shadow);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-fraunces);
 }

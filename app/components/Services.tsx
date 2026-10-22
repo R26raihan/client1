@@ -27,18 +27,18 @@ export default function Services() {
         <SectionHeading eyebrow="Layanan Kami" title="Dari gagasan pertama hingga rumah terasa sempurna" description="Layanan desain dan pembangunan yang saling terhubung, disesuaikan dengan kebutuhan serta anggaran Anda." />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map(({ id, icon: Icon, title, description }) => (
-            <article data-motion="card" id={id} key={title} className="rounded-2xl border border-[#c9ac91]/30 bg-white/45 p-7 shadow-[0_10px_35px_#49301e06,inset_0_1px_0_#ffffffb3] backdrop-blur-md transition-[transform,background-color,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 motion-reduce:hover:translate-y-0 motion-reduce:focus-within:translate-y-0 hover:border-primary/35 hover:bg-white/70 motion-reduce:transition-none">
+            <article data-motion="card" id={id} key={title} className="rounded-2xl border border-glass-edge bg-glass-card p-7 shadow-glass backdrop-blur-[28px] backdrop-saturate-[1.8] transition-[transform,background-color,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 motion-reduce:hover:translate-y-0 motion-reduce:focus-within:translate-y-0 hover:border-primary/35 hover:bg-glass-card-hover motion-reduce:transition-none">
               <span className="mb-6 inline-flex rounded-2xl border border-primary/10 bg-primary/8 p-3 text-primary"><Icon size={25} aria-hidden="true" /></span>
-              <h3 className="mb-3 font-serif text-xl font-medium">{title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{description}</p>
-              <a href={waLink(`Halo Loka Architect, saya ingin informasi mengenai ${title}.`)} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-xs font-semibold text-primary underline-offset-4 hover:underline">Diskusikan layanan ini <span aria-hidden="true">↗</span></a>
+              <h3 className="mb-3 font-serif text-2xl font-medium">{title}</h3>
+              <p className="text-lg leading-relaxed text-muted-foreground">{description}</p>
+              <a href={waLink(`Halo Loka Architect, saya ingin informasi mengenai ${title}.`)} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-base font-semibold text-primary underline-offset-4 hover:underline">Diskusikan layanan ini <span aria-hidden="true">↗</span></a>
             </article>
           ))}
         </div>
         <div className="mt-12 border-t border-border-subtle pt-8">
-          <h3 className="mb-6 text-center font-serif text-xl">Mengapa Memilih Kami</h3>
+          <h3 className="mb-6 text-center font-serif text-2xl">Mengapa Memilih Kami</h3>
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {strengths.map(({ icon: Icon, title }) => <li data-motion="fade" key={title} className="flex items-center justify-center gap-3 text-sm font-medium"><Icon size={20} className="shrink-0 text-primary" aria-hidden="true" />{title}</li>)}
+            {strengths.map(({ icon: Icon, title }) => <li data-motion="fade" key={title} className="flex items-center justify-center gap-3 text-lg font-medium"><Icon size={20} className="shrink-0 text-primary" aria-hidden="true" />{title}</li>)}
           </ul>
         </div>
       </div>
