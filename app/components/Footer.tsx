@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="border-t border-border-subtle bg-accent text-accent-foreground">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div data-motion="text" className="flex flex-col gap-4">
-          <Link href="#top" className="font-serif text-2xl font-semibold">
+          <Link href="/#top" className="font-serif text-2xl font-semibold">
             {siteConfig.name}
           </Link>
           <p className="max-w-xs text-lg text-accent-foreground/90">
@@ -54,7 +54,7 @@ export default function Footer() {
           {siteConfig.navLinks.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={`/${link.href}`}
               className="inline-flex min-h-12 items-center text-lg text-accent-foreground/95 transition-colors hover:text-primary"
             >
               {link.label}

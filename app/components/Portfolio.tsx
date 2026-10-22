@@ -2,33 +2,13 @@
 
 import { useRef, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { projects, roomGallery } from "../lib/projects";
 import { ArrowUpRight, Search, X } from "lucide-react";
 import { waLink } from "../lib/site-config";
 import VirtualTour from "./VirtualTour";
 
 const categories = ["Semua karya", "Modern", "Tropis", "Villa", "Interior", "Klasik", "Industrial", "Mediteran", "American"];
-const projects = [
-  { title: "The Tropical Residence", category: "Tropis", city: "Jakarta", image: "/images/residence.jpg", area: "320", description: "Hunian dengan bukaan lebar yang menghubungkan ruang keluarga, taman, dan kolam. Material alami memberi kehangatan pada komposisi modern yang bersih." },
-  { title: "Villa Teras Teduh", category: "Villa", city: "Bali", image: "/images/villa.jpg", area: "280", description: "Konsep villa dengan ruang komunal yang lapang dan nuansa alami. Dirancang sebagai tempat beristirahat yang tetap dekat dengan alam." },
-  { title: "Ruang untuk Pulang", category: "Interior", city: "Bandung", image: "/images/interior.jpg", area: "120", description: "Eksplorasi interior dengan warna netral, tekstur kayu, dan pencahayaan lembut. Setiap sudut mengutamakan kenyamanan kegiatan sehari-hari." },
-  { title: "Casa Cahaya", category: "Modern", city: "Tangerang", image: "/images/modern.jpg", area: "240", description: "Garis geometris dan permainan bidang menghadirkan hunian modern yang terbuka. Penataan ruang mengutamakan privasi sekaligus koneksi antarruang." },
-  { title: "Courtyard House", category: "Tropis", city: "Yogyakarta", image: "/images/courtyard.jpg", area: "210", description: "Studi rumah dengan ruang terbuka sebagai pusat aktivitas. Taman menjadi penghubung visual untuk menghadirkan suasana teduh dalam keseharian." },
-  { title: "The Quiet Living", category: "Interior", city: "Surabaya", image: "/images/living-room.jpg", area: "160", description: "Ruang keluarga yang tenang dengan komposisi furnitur sederhana dan material bertekstur. Konsep yang menyeimbangkan estetika dan kebutuhan penghuni." },
-  {"title": "Classic White Residence", "category": "Klasik", "city": "Semarang", "image": "/images/classic.jpg", "area": "360", "description": "Inspirasi hunian klasik dengan komposisi simetris, kolom pada teras, dan warna fasad yang lembut. Detail arsitektur memberi karakter yang bertahan lintas waktu."},
-  {"title": "The Urban Loft", "category": "Industrial", "city": "Jakarta", "image": "/images/industrial-loft.jpg", "area": "180", "description": "Eksplorasi ruang loft terbuka dengan struktur yang terekspos dan mezzanine. Perpaduan material menonjolkan karakter industrial yang hangat."},
-  {"title": "Loft Kayu & Baja", "category": "Industrial", "city": "Bandung", "image": "/images/industrial-space.jpg", "area": "200", "description": "Konsep interior dengan rangka baja hitam, tekstur kayu, dan jendela tinggi. Ruang komunal mengalir dalam satu area yang lapang."},
-  {"title": "Casa Terakota", "category": "Mediteran", "city": "Bali", "image": "/images/mediterranean-house.jpg", "area": "290", "description": "Inspirasi rumah dengan lengkung teras, atap terakota, dan taman hijau. Suasana Mediteran dipadukan dengan kedekatan pada alam tropis."},
-  {"title": "Villa Palma", "category": "Mediteran", "city": "Lombok", "image": "/images/mediterranean-villa.jpg", "area": "340", "description": "Warna putih, bukaan melengkung, dan area kolam menjadi pusat inspirasi villa ini. Ruang luar dirancang sebagai perpanjangan kegiatan di dalam rumah."},
-  {"title": "American Garden House", "category": "American", "city": "Bogor", "image": "/images/american-house.jpg", "area": "260", "description": "Inspirasi rumah American dengan atap pelana, fasad berlapis, dan halaman depan yang hijau. Komposisi sederhana menghadirkan suasana rumah yang akrab."},
-  {"title": "The Welcoming Porch", "category": "American", "city": "Tangerang", "image": "/images/american-porch.jpg", "area": "230", "description": "Teras depan yang teduh, cerobong batu, dan warna netral membentuk karakter hunian American. Ruang transisi memberi tempat untuk menikmati suasana luar."},
-];
-
-const roomGallery = [
-  { image: "/images/living-room.jpg", label: "Inspirasi ruang keluarga" },
-  { image: "/images/interior.jpg", label: "Detail interior & penataan ruang" },
-  { image: "/images/industrial-loft.jpg", label: "Inspirasi ruang terbuka" },
-  { image: "/images/industrial-space.jpg", label: "Material & pencahayaan ruang" },
-];
 
 function subscribeToLocation(callback: () => void) {
   window.addEventListener("popstate", callback);
@@ -75,6 +55,10 @@ export default function Portfolio() {
             <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-white/45 bg-white/10 backdrop-blur-[18px] backdrop-saturate-[1.8] transition-colors group-hover/project:bg-white/25 motion-reduce:transition-none sm:size-13" aria-hidden="true"><ArrowUpRight size={22} /></span>
           </div>
         </button>
+        <div className="flex items-center justify-between gap-4 border-b border-border-subtle bg-background px-6 py-4 sm:px-8">
+          <span className="text-base text-muted-foreground">{project.category} · {project.city}</span>
+          <Link href={`/portofolio/${project.slug}`} className="inline-flex min-h-12 shrink-0 items-center justify-center gap-3 rounded-full bg-primary px-5 py-3 text-base font-semibold text-primary-foreground hover:brightness-110">Lihat detail <ArrowUpRight size={19} aria-hidden="true" /></Link>
+        </div>
       </article>)}
     </div>
     {visible.length === 0 && <div className="py-16 text-center"><p className="text-muted-foreground">Tidak ada konsep yang sesuai dengan pencarian Anda.</p><button type="button" onClick={() => { setQuery(""); setCategory("Semua karya"); }} className="mt-5 text-lg text-primary underline">Tampilkan semua karya</button></div>}
@@ -109,6 +93,9 @@ export default function Portfolio() {
               </figure>)}
             </div>
           </section>
+          <div className="sticky bottom-0 z-10 -mx-6 border-t border-border-subtle bg-background/95 px-6 py-4 backdrop-blur-xl sm:-mx-10 sm:px-10">
+            <Link href={`/portofolio/${selected.slug}`} className="flex min-h-14 items-center justify-center gap-3 rounded-xl bg-primary px-6 py-3 text-lg font-semibold text-primary-foreground hover:brightness-110">Lihat detail lengkap <ArrowUpRight size={22} aria-hidden="true" /></Link>
+          </div>
           <div className="border-t border-border-subtle pt-7">
             <p className="mb-6 text-base leading-relaxed text-muted-foreground">Studi konsep dengan foto ilustratif, bukan dokumentasi satu proyek klien. Luas dan lokasi merupakan contoh kebutuhan perancangan.</p>
             <a href={waLink(`Halo Loka Architect, saya tertarik dengan konsep ${selected.title}. Saya ingin berkonsultasi untuk proyek saya.`)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-14 items-center justify-center gap-5 rounded-xl bg-primary px-6 py-4 text-lg font-medium text-primary-foreground hover:brightness-90">Diskusikan konsep serupa <ArrowUpRight size={20} /></a>
