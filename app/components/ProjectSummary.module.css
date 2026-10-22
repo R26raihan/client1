@@ -1,0 +1,30 @@
+.section { background: var(--background); border-bottom: 1px solid var(--border-subtle); }
+.summary { display: flex; flex-direction: column; align-items: center; padding: 60px 24px 44px; text-align: center; }
+.eyebrow { color: var(--primary); font-size: 10px; line-height: 1.8; font-weight: 600; letter-spacing: 2px; }
+.count { margin-top: 16px; color: var(--foreground); font-family: var(--font-serif), Georgia, serif; font-size: clamp(60px, 7vw, 90px); line-height: 1.15; font-weight: 400; letter-spacing: -3px; }
+.summary h2 { margin: 8px 0 0; font-size: 15px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+.summary p { margin: 10px 0 0; color: var(--muted-foreground); font-size: 12px; line-height: 1.7; }
+.actions { display: flex; justify-content: center; gap: 12px; margin-top: 28px; }
+.actions a { display: inline-flex; align-items: center; justify-content: center; gap: 24px; min-height: 48px; padding: 14px 25px; border: 1px solid var(--primary); font-size: 12px; font-weight: 600; }
+.primary { background: var(--primary); color: white; }
+.primary:hover { background: #775d39; }
+.secondary { color: var(--primary); }
+.secondary:hover { background: var(--surface-muted); }
+.services { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); max-width: 1280px; margin: 0 auto; padding: 0 24px 56px; }
+.service { display: flex; position: relative; flex-direction: column; align-items: center; justify-content: center; gap: 18px; min-height: 155px; padding: 24px 15px; border: 1px solid var(--border-subtle); margin-left: -1px; text-align: center; color: var(--primary); transition: background .2s; }
+.service:first-child { margin-left: 0; }
+.service span { max-width: 150px; color: var(--foreground); font-size: 11px; font-weight: 500; line-height: 1.8; text-transform: uppercase; letter-spacing: .5px; }
+.service:hover { background: var(--surface-muted); }
+.arrow { position: absolute; top: 12px; right: 12px; opacity: .65; }
+@media (max-width: 900px) {
+  .services { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .service { margin: 0; }
+}
+@media (max-width: 600px) {
+  .summary { padding: 42px 20px 32px; }
+  .eyebrow { font-size: 9px; letter-spacing: 1.3px; }
+  .actions { width: 100%; gap: 10px; }
+  .actions a { flex: 1; padding: 13px 10px; gap: 10px; font-size: 11px; }
+  .services { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0 20px 36px; }
+  .service { min-height: 140px; padding: 22px 14px; }
+}

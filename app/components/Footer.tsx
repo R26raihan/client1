@@ -1,0 +1,105 @@
+import Link from "next/link";
+import { Mail, Phone, MapPin } from "lucide-react";
+import { InstagramIcon, YoutubeIcon, TiktokIcon } from "./BrandIcons";
+import { siteConfig } from "../lib/site-config";
+
+const currentYear = new Date().getFullYear();
+
+export default function Footer() {
+  return (
+    <footer className="border-t border-border-subtle bg-accent text-accent-foreground">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="flex flex-col gap-4">
+          <Link href="#top" className="font-serif text-xl font-semibold">
+            {siteConfig.name}
+          </Link>
+          <p className="max-w-xs text-sm text-accent-foreground/70">
+            {siteConfig.description}
+          </p>
+          <div className="flex items-center gap-3">
+            <a
+              href={siteConfig.socials.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="rounded-full border border-accent-foreground/20 p-2 transition-colors hover:border-primary hover:text-primary"
+            >
+              <InstagramIcon size={18} />
+            </a>
+            <a
+              href={siteConfig.socials.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              className="rounded-full border border-accent-foreground/20 p-2 transition-colors hover:border-primary hover:text-primary"
+            >
+              <TiktokIcon size={18} />
+            </a>
+            <a
+              href={siteConfig.socials.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="rounded-full border border-accent-foreground/20 p-2 transition-colors hover:border-primary hover:text-primary"
+            >
+              <YoutubeIcon size={18} />
+            </a>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-accent-foreground/60">
+            Navigasi
+          </h3>
+          {siteConfig.navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm text-accent-foreground/80 transition-colors hover:text-primary"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-accent-foreground/60">
+            Layanan
+          </h3>
+          <span className="text-sm text-accent-foreground/80">Desain Arsitektur</span>
+          <span className="text-sm text-accent-foreground/80">Desain Interior</span>
+          <span className="text-sm text-accent-foreground/80">Jasa Bangun &amp; Renovasi</span>
+          <span className="text-sm text-accent-foreground/80">RAB &amp; Konsultasi</span>
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-accent-foreground/60">
+            Kontak
+          </h3>
+          <span className="flex items-start gap-2 text-sm text-accent-foreground/80">
+            <MapPin size={16} className="mt-0.5 shrink-0" />
+            {siteConfig.address}
+          </span>
+          <a
+            href={`tel:${siteConfig.waNumber}`}
+            className="flex items-center gap-2 text-sm text-accent-foreground/80 hover:text-primary"
+          >
+            <Phone size={16} className="shrink-0" />
+            {siteConfig.phoneDisplay}
+          </a>
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="flex items-center gap-2 text-sm text-accent-foreground/80 hover:text-primary"
+          >
+            <Mail size={16} className="shrink-0" />
+            {siteConfig.email}
+          </a>
+        </div>
+      </div>
+
+      <div className="border-t border-accent-foreground/10 px-6 py-6 text-center text-sm text-accent-foreground/60">
+        © {currentYear} {siteConfig.name}. Seluruh hak cipta dilindungi.
+      </div>
+    </footer>
+  );
+}

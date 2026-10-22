@@ -1,0 +1,97 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: var(--background);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.contactBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 32px;
+  padding: 8px max(24px, calc((100% - 1280px) / 2));
+  background: #252822;
+  color: #deded5;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+}
+.contactBar a { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; letter-spacing: .5px; }
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  width: 100%;
+  max-width: 1328px;
+  height: 88px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.logo { position: relative; flex: 0 0 92px; width: 92px; color: var(--foreground); font-family: Georgia, serif; font-size: 46px; line-height: .9; letter-spacing: -3px; }
+.logo span { display: block; margin-top: 10px; font-family: Arial, sans-serif; font-size: 8px; line-height: 1; letter-spacing: 3px; }
+.logo i { position: absolute; top: 0; right: 5px; font: 10px Arial, sans-serif; letter-spacing: 0; }
+.navigation { flex: 0 1 auto; margin-left: auto; min-width: 0; }
+.menu { display: flex; align-items: stretch; gap: 22px; margin: 0; padding: 0; list-style: none; }
+.group { position: relative; margin: 0; padding: 0; }
+.trigger { display: flex; align-items: center; justify-content: center; gap: 6px; height: 88px; padding: 0; border: 0; background: transparent; color: #45473f; font: inherit; font-size: 12px; line-height: 1; white-space: nowrap; cursor: pointer; }
+.trigger:hover, .trigger[aria-expanded="true"] { color: var(--primary); }
+.trigger svg { flex: 0 0 auto; }
+.trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+.dropdown { position: absolute; z-index: 1; top: 100%; left: -16px; width: max-content; min-width: 245px; max-width: 340px; max-height: calc(100svh - 145px); overflow-y: auto; margin: 0; padding: 8px; list-style: none; background: var(--background); border: 1px solid var(--border-subtle); border-top: 2px solid var(--primary); box-shadow: 0 16px 32px #1b181218; }
+.dropdown[hidden] { display: none; }
+.dropdown a { display: block; padding: 11px 12px; color: #45473f; font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; }
+.dropdown a:hover { background: var(--surface-muted); color: var(--primary); }
+.group:nth-last-child(-n+2) .dropdown { left: auto; right: -16px; }
+.actions { display: flex; flex: 0 0 auto; align-items: center; gap: 6px; }
+.icon, .mobileToggle { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; padding: 0; background: transparent; border: 1px solid var(--border-subtle); color: var(--foreground); cursor: pointer; }
+.icon:hover, .mobileToggle:hover { background: var(--surface-muted); }
+.mobileToggle { display: none; }
+.icon[aria-expanded="true"] { border-color: var(--primary); background: var(--surface-muted); color: var(--primary); }
+.search {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: max(24px, calc((100% - 1280px) / 2));
+  width: min(520px, calc(100% - 48px));
+  padding: 22px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  background: var(--background);
+  box-shadow: 0 18px 48px #1b18121f;
+}
+.searchHeading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.searchHeading label { font-size: 14px; font-weight: 600; line-height: 1.5; }
+.searchClose { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; width: 32px; height: 32px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--muted-foreground); cursor: pointer; }
+.searchClose:hover { background: var(--surface-muted); color: var(--foreground); }
+.searchField { display: flex; align-items: center; gap: 10px; min-height: 56px; padding: 5px 5px 5px 14px; border: 1px solid var(--border-subtle); border-radius: 8px; background: var(--surface); }
+.searchField:focus-within { border-color: var(--primary); box-shadow: 0 0 0 3px #92764e18; }
+.searchField > svg { flex-shrink: 0; color: var(--muted-foreground); }
+.searchField input { flex: 1; width: 100%; min-width: 0; padding: 10px 0; border: 0; background: transparent; color: var(--foreground); font: inherit; font-size: 14px; line-height: 1.5; outline: none; }
+.searchField input::placeholder { color: var(--muted-foreground); opacity: .8; }
+.searchSubmit { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 16px; border: 0; border-radius: 5px; background: var(--primary); color: white; font-size: 12px; font-weight: 600; white-space: nowrap; cursor: pointer; }
+.searchSubmit:hover { background: #775d39; }
+.searchHint { margin: 12px 0 0; color: var(--muted-foreground); font-size: 11px; line-height: 1.6; }
+@media (max-width: 1100px) {
+  .bar { height: 76px; gap: 20px; }
+  .mobileToggle { display: inline-flex; }
+  .navigation { display: none; position: absolute; top: 100%; left: 0; right: 0; max-height: calc(100svh - 110px); overflow-y: auto; margin: 0; padding: 8px 24px 20px; background: var(--background); border-bottom: 1px solid var(--border-subtle); box-shadow: 0 16px 32px #1b181214; }
+  .navigation.open { display: block; }
+  .menu { display: block; }
+  .trigger { justify-content: space-between; width: 100%; height: auto; min-height: 52px; padding: 16px 0; border-bottom: 1px solid var(--border-subtle); font-size: 14px; }
+  .dropdown { position: static; width: 100%; min-width: 0; max-width: none; max-height: none; margin: 8px 0; padding: 0 0 0 12px; border: 0; border-left: 2px solid var(--border-subtle); box-shadow: none; }
+  .dropdown a { padding: 12px; }
+}
+@media (max-width: 600px) {
+  .contactBar { justify-content: center; font-size: 9px; }
+  .contactBar > span { display: none; }
+  .bar { padding: 0 20px; }
+  .logo { font-size: 40px; }
+  .logo i { right: 13px; }
+  .search { top: calc(100% + 8px); right: 12px; width: calc(100% - 24px); padding: 16px; }
+  .searchField { flex-wrap: wrap; }
+  .searchField input { width: calc(100% - 40px); font-size: 16px; }
+  .searchSubmit { width: 100%; }
+  .searchHint { font-size: 12px; }
+}
