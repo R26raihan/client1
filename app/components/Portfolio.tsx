@@ -4,6 +4,7 @@ import { useRef, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import { ArrowUpRight, Search, X } from "lucide-react";
 import { waLink } from "../lib/site-config";
+import VirtualTour from "./VirtualTour";
 
 const categories = ["Semua karya", "Modern", "Tropis", "Villa", "Interior", "Klasik", "Industrial", "Mediteran", "American"];
 const projects = [
@@ -20,6 +21,13 @@ const projects = [
   {"title": "Villa Palma", "category": "Mediteran", "city": "Lombok", "image": "/images/mediterranean-villa.jpg", "area": "340", "description": "Warna putih, bukaan melengkung, dan area kolam menjadi pusat inspirasi villa ini. Ruang luar dirancang sebagai perpanjangan kegiatan di dalam rumah."},
   {"title": "American Garden House", "category": "American", "city": "Bogor", "image": "/images/american-house.jpg", "area": "260", "description": "Inspirasi rumah American dengan atap pelana, fasad berlapis, dan halaman depan yang hijau. Komposisi sederhana menghadirkan suasana rumah yang akrab."},
   {"title": "The Welcoming Porch", "category": "American", "city": "Tangerang", "image": "/images/american-porch.jpg", "area": "230", "description": "Teras depan yang teduh, cerobong batu, dan warna netral membentuk karakter hunian American. Ruang transisi memberi tempat untuk menikmati suasana luar."},
+];
+
+const roomGallery = [
+  { image: "/images/living-room.jpg", label: "Inspirasi ruang keluarga" },
+  { image: "/images/interior.jpg", label: "Detail interior & penataan ruang" },
+  { image: "/images/industrial-loft.jpg", label: "Inspirasi ruang terbuka" },
+  { image: "/images/industrial-space.jpg", label: "Material & pencahayaan ruang" },
 ];
 
 function subscribeToLocation(callback: () => void) {
@@ -63,15 +71,51 @@ export default function Portfolio() {
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/80 via-black/5 to-transparent" />
           <span className="absolute top-5 left-5 rounded-full border border-white/45 bg-glass-header px-3.5 py-1.5 text-[15px] font-semibold tracking-[1.5px] text-accent-foreground backdrop-blur-[18px] backdrop-saturate-[1.8] sm:top-7 sm:left-8">{project.category.toUpperCase()}</span>
           <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6 text-white sm:p-8 lg:p-10">
-            <div><p className="mb-2 text-[15px] font-medium tracking-[2px] text-white/95 sm:text-base">{project.city.toUpperCase()} · {project.area} M²</p><h3 className="font-serif text-[clamp(24px,2.5vw,42px)] leading-tight font-normal">{project.title}</h3><p className="mt-3 text-[15px] tracking-[2px] text-white/90 sm:text-[15px]">STUDI KONSEP</p></div>
+            <div><p className="mb-2 text-[15px] font-medium tracking-[2px] text-white/95 sm:text-base">{project.city.toUpperCase()} · {project.area} M²</p><h3 className="font-serif text-[clamp(24px,2.5vw,42px)] leading-tight font-normal">{project.title}</h3><p className="mt-3 text-[15px] tracking-[2px] text-white/90 sm:text-[15px]">{project.title === projects[0].title ? "STUDI KONSEP · TUR 360°" : "STUDI KONSEP"}</p></div>
             <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-white/45 bg-white/10 backdrop-blur-[18px] backdrop-saturate-[1.8] transition-colors group-hover/project:bg-white/25 motion-reduce:transition-none sm:size-13" aria-hidden="true"><ArrowUpRight size={22} /></span>
           </div>
         </button>
       </article>)}
     </div>
     {visible.length === 0 && <div className="py-16 text-center"><p className="text-muted-foreground">Tidak ada konsep yang sesuai dengan pencarian Anda.</p><button type="button" onClick={() => { setQuery(""); setCategory("Semua karya"); }} className="mt-5 text-lg text-primary underline">Tampilkan semua karya</button></div>}
-    <dialog data-motion-panel ref={dialog} className="fixed inset-0 m-auto max-h-[90svh] w-[min(920px,92vw)] overflow-y-auto border-0 bg-background p-0 text-foreground backdrop:bg-black/80 backdrop:backdrop-blur-[5px]" aria-labelledby="project-title" onClick={event => { if (event.target === event.currentTarget) dialog.current?.close(); }}>
-      {selected && <><div className="relative aspect-video"><Image src={selected.image} alt={`Inspirasi ${selected.title}`} fill sizes="920px" className="object-cover" /><button autoFocus type="button" aria-label="Tutup detail proyek" onClick={() => dialog.current?.close()} className="absolute top-4 right-4 inline-flex size-12 items-center justify-center rounded-full bg-background p-3"><X size={20} /></button></div><div className="p-7 sm:p-10"><span className="mb-[18px] block text-[15px] font-semibold tracking-[2.5px] text-primary">{selected.category} · {selected.city} · {selected.area} M²</span><h2 id="project-title" className="font-serif text-3xl">{selected.title}</h2><p className="my-5 text-lg leading-8 text-muted-foreground">{selected.description}</p><p className="mb-6 text-base text-muted-foreground">Studi konsep dengan foto ilustratif. Luas dan lokasi merupakan contoh kebutuhan perancangan.</p><a href={waLink(`Halo Loka Architect, saya tertarik dengan konsep ${selected.title}. Saya ingin berkonsultasi untuk proyek saya.`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-7 px-[22px] py-4 text-base font-medium transition-colors motion-reduce:transition-none bg-primary text-primary-foreground hover:brightness-90">Diskusikan konsep serupa <ArrowUpRight size={16} /></a></div></>}
+    <dialog data-motion-panel ref={dialog} onClose={() => setSelected(null)} className="fixed inset-0 m-auto max-h-[90svh] w-[min(920px,92vw)] overflow-y-auto border-0 bg-background p-0 text-foreground backdrop:bg-black/80 backdrop:backdrop-blur-[5px]" aria-labelledby="project-title" onClick={event => { if (event.target === event.currentTarget) dialog.current?.close(); }}>
+      {selected && <>
+        <div className="sticky top-0 z-20 flex items-center justify-between gap-4 border-b border-border-subtle bg-background/95 px-5 py-3 backdrop-blur-xl">
+          <p className="text-lg font-semibold">Detail konsep</p>
+          <button autoFocus type="button" aria-label="Tutup detail proyek" onClick={() => dialog.current?.close()} className="inline-flex size-12 items-center justify-center rounded-full border border-border-subtle hover:bg-surface-muted"><X size={22} /></button>
+        </div>
+        <div className="relative aspect-video"><Image src={selected.image} alt={`Inspirasi ${selected.title}`} fill sizes="(max-width: 1000px) 92vw, 920px" className="object-cover" /></div>
+        <div className="space-y-10 p-6 sm:p-10">
+          <div>
+            <span className="mb-4 block text-base font-semibold tracking-wide text-primary">{selected.category} · {selected.city} · {selected.area} M²</span>
+            <h2 id="project-title" className="font-serif text-3xl sm:text-4xl">{selected.title}</h2>
+            <p className="mt-5 text-lg leading-8 text-muted-foreground">{selected.description}</p>
+          </div>
+          {selected.title === projects[0].title && <VirtualTour />}
+          <section aria-labelledby="project-video-title">
+            <div className="mb-5 flex flex-wrap items-end justify-between gap-3"><h3 id="project-video-title" className="font-serif text-2xl sm:text-3xl">Video inspirasi desain</h3><a href="https://www.youtube.com/watch?v=SHUkhFUK2jI" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center gap-2 text-base font-medium text-primary underline-offset-4 hover:underline">Buka di YouTube <ArrowUpRight size={18} aria-hidden="true" /></a></div>
+            <div className="aspect-video overflow-hidden rounded-2xl bg-black">
+              <iframe key={selected.title} src="https://www.youtube-nocookie.com/embed/SHUkhFUK2jI?rel=0" title="Video inspirasi visualisasi arsitektur — Lumion 12" className="h-full w-full border-0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" />
+            </div>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">Video referensi visualisasi Lumion, sebagai inspirasi penyajian desain.</p>
+          </section>
+          <section aria-labelledby="project-rooms-title">
+            <h3 id="project-rooms-title" className="font-serif text-2xl sm:text-3xl">Jelajahi suasana ruang</h3>
+            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">Pilihan foto inspirasi interior, material, dan pencahayaan.</p>
+            <div className="mt-6 grid gap-5 sm:grid-cols-2">
+              {roomGallery.map(room => <figure key={room.image} className="group/room overflow-hidden rounded-2xl border border-border-subtle bg-glass-card">
+                <div className="relative aspect-[4/3] overflow-hidden"><Image src={room.image} alt={room.label} fill sizes="(max-width: 639px) 85vw, 420px" className="object-cover transition-transform duration-500 group-hover/room:scale-105 motion-reduce:transition-none" /></div>
+                <figcaption className="p-4 text-lg font-medium">{room.label}</figcaption>
+              </figure>)}
+            </div>
+          </section>
+          <div className="border-t border-border-subtle pt-7">
+            <p className="mb-6 text-base leading-relaxed text-muted-foreground">Studi konsep dengan foto ilustratif, bukan dokumentasi satu proyek klien. Luas dan lokasi merupakan contoh kebutuhan perancangan.</p>
+            <a href={waLink(`Halo Loka Architect, saya tertarik dengan konsep ${selected.title}. Saya ingin berkonsultasi untuk proyek saya.`)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-14 items-center justify-center gap-5 rounded-xl bg-primary px-6 py-4 text-lg font-medium text-primary-foreground hover:brightness-90">Diskusikan konsep serupa <ArrowUpRight size={20} /></a>
+          </div>
+        </div>
+      </>}
+
     </dialog>
   </section>;
 }

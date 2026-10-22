@@ -38,24 +38,22 @@ function environment(reduced = false) {
   return { root, Element, preference, state };
 }
 
-test("visible elements animate in order and cleanup cancels unfinished motion", () => {
+test("page content is never observed or animated on scroll", () => {
   const { root, Element, state } = environment();
   root.children = [new Element("title"), new Element("image"), new Element("card")];
   const cleanup = startPageMotion(root);
-  assert.equal(state.animations.length, 0); // Content does not depend on animation to render.
-  state.intersect(root.children.map(target => ({ target, isIntersecting: true })));
-  assert.deepEqual(state.animations.map(item => item.options.delay), [0, 65, 130]);
-  assert.equal(state.unobserved.length, 3);
+  assert.equal(state.intersect, undefined);
+  assert.equal(state.observed.length, 0);
+  assert.equal(state.animations.length, 0);
   cleanup();
-  assert.ok(state.animations.every(item => item.cancelled));
-  assert.ok(state.observerDisconnected && state.mutationsDisconnected && state.listenerRemoved);
+  assert.ok(state.mutationsDisconnected && state.listenerRemoved);
 });
 
 test("reduced motion skips entrances and cancels running animations when enabled", () => {
   const { root, Element, preference, state } = environment(true);
   const card = new Element("card"); root.children = [card];
   const cleanup = startPageMotion(root);
-  state.intersect([{ target: card, isIntersecting: true }]);
+
   assert.equal(state.animations.length, 0);
   preference.matches = false;
   const panel = new Element(); panel.panel = true;
@@ -66,13 +64,13 @@ test("reduced motion skips entrances and cancels running animations when enabled
   cleanup();
 });
 
-test("filtered content is observed and only opening panels animate", () => {
+test("filtered content stays static and only opening panels animate", () => {
   const { root, Element, state } = environment();
   const cleanup = startPageMotion(root);
   const card = new Element("card");
   state.mutate([{ type: "childList", addedNodes: [card] }]);
   state.mutate([{ type: "childList", addedNodes: [card] }]);
-  assert.equal(state.observed.length, 1);
+  assert.equal(state.observed.length, 0);
   const panel = new Element(); panel.panel = true; panel.hidden = true;
   state.mutate([{ type: "attributes", target: panel, attributeName: "hidden" }]);
   assert.equal(state.animations.length, 0);
