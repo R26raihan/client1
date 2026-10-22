@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import styles from "./Navbar.module.css";
 import { ChevronDown, Menu, X, Phone, Search, ArrowUpRight } from "lucide-react";
 import { siteConfig, waLink } from "../lib/site-config";
 
@@ -24,6 +23,7 @@ const menuGroups = [
     { label: "Jasa Renovasi Rumah", href: "/#renovasi-rumah" },
     { label: "Visualisasi 3D & Virtual Tour", href: "/#visualisasi-3d" },
     { label: "RAB & Konsultasi Biaya", href: "/#rab-biaya" },
+    { label: "Apa yang Anda Dapatkan?", href: "/#hasil-desain" },
     { label: "Konsultasi Harga Jasa", href: "/#kontak" },
   ] },
   { label: "Tentang Kami", items: [
@@ -61,41 +61,41 @@ export default function Navbar() {
 
   function closeNavigation() { setActive(null); setOpen(false); setSearchOpen(false); }
 
-  return <header ref={header} className={styles.header} onKeyDown={event => {
+  return <header ref={header} className="sticky top-0 z-50 w-full border-b border-primary/25 bg-glass-header shadow-[0_4px_24px_#49301e08] backdrop-blur-xl backdrop-saturate-125" onKeyDown={event => {
     if (event.key === "Escape") {
       if (searchOpen) searchButton.current?.focus();
       else if (active) header.current?.querySelector<HTMLButtonElement>(`[data-group="${active}"]`)?.focus();
       closeNavigation();
     }
   }}>
-    <div className={styles.contactBar}><span>STUDIO ARSITEKTUR & INTERIOR · INDONESIA</span><a href={waLink()} target="_blank" rel="noopener noreferrer"><Phone size={12} /> {siteConfig.phoneDisplay}</a></div>
-    <div className={styles.bar}>
-      <Link href="/#top" onClick={closeNavigation} className={styles.logo}>loka<span>ARCHITECT</span><i>®</i></Link>
-      <nav id="header-navigation" aria-label="Navigasi utama" className={`${styles.navigation} ${open ? styles.open : ""}`}>
-        <ul className={styles.menu}>{menuGroups.map((group, index) => <li key={group.label} className={styles.group} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setActive(current => current === group.label ? null : current); }}>
-          <button type="button" data-group={group.label} className={styles.trigger} aria-expanded={active === group.label} aria-controls={`header-submenu-${index}`} onClick={() => { setActive(active === group.label ? null : group.label); setSearchOpen(false); }}>
+    <div className="flex min-h-8 items-center justify-between bg-[var(--glass-color)] px-[max(24px,calc((100%-1280px)/2))] py-2 text-[10px] leading-normal tracking-[1.5px] text-glass-foreground max-[600px]:justify-center max-[600px]:text-[9px] [&>span]:max-[600px]:hidden [&>a]:inline-flex [&>a]:items-center [&>a]:gap-2 [&>a]:tracking-[.5px] [&>a]:whitespace-nowrap"><span>STUDIO ARSITEKTUR & INTERIOR · INDONESIA</span><a href={waLink()} target="_blank" rel="noopener noreferrer"><Phone size={12} /> {siteConfig.phoneDisplay}</a></div>
+    <div className="mx-auto flex h-[88px] w-full max-w-[1328px] items-center justify-between gap-8 px-6 max-[1100px]:h-[76px] max-[1100px]:gap-5 max-[600px]:px-5">
+      <Link href="/#top" onClick={closeNavigation} className="relative w-[92px] shrink-0 basis-[92px] font-[Georgia,serif] text-[46px] leading-[.9] tracking-[-3px] text-foreground max-[600px]:text-[40px] [&>span]:mt-2.5 [&>span]:block [&>span]:font-sans [&>span]:text-[8px] [&>span]:leading-none [&>span]:tracking-[3px] [&>i]:absolute [&>i]:top-0 [&>i]:right-[5px] [&>i]:font-sans [&>i]:text-[10px] [&>i]:tracking-normal max-[600px]:[&>i]:right-[13px]">loka<span>ARCHITECT</span><i>®</i></Link>
+      <nav id="header-navigation" aria-label="Navigasi utama" className={`ml-auto min-w-0 flex-[0_1_auto] min-[1101px]:block max-[1100px]:absolute max-[1100px]:top-full max-[1100px]:inset-x-0 max-[1100px]:m-0 max-[1100px]:max-h-[calc(100svh-110px)] max-[1100px]:overflow-y-auto max-[1100px]:border-b max-[1100px]:border-border-subtle max-[1100px]:bg-white max-[1100px]:text-[#302219] max-[1100px]:backdrop-blur-xl max-[1100px]:px-6 max-[1100px]:pt-2 max-[1100px]:pb-5 max-[1100px]:shadow-[0_16px_32px_#1b181214] ${open ? "block" : "hidden"}`}>
+        <ul className="m-0 flex list-none items-stretch gap-[22px] p-0 max-[1100px]:block">{menuGroups.map((group, index) => <li key={group.label} className="group/nav relative m-0 p-0" onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setActive(current => current === group.label ? null : current); }}>
+          <button type="button" data-group={group.label} className="flex h-[88px] cursor-pointer items-center justify-center gap-1.5 border-0 bg-transparent p-0 text-xs leading-none whitespace-nowrap text-foreground hover:text-primary aria-expanded:text-primary [&>svg]:shrink-0 [&[aria-expanded=true]>svg]:rotate-180 max-[1100px]:h-auto max-[1100px]:min-h-[52px] max-[1100px]:w-full max-[1100px]:justify-between max-[1100px]:border-b max-[1100px]:border-border-subtle max-[1100px]:py-4 max-[1100px]:text-sm" aria-expanded={active === group.label} aria-controls={`header-submenu-${index}`} onClick={() => { setActive(active === group.label ? null : group.label); setSearchOpen(false); }}>
             {group.label}<ChevronDown size={13} aria-hidden="true" />
           </button>
-          <ul id={`header-submenu-${index}`} className={styles.dropdown} hidden={active !== group.label}>{group.items.map(item => <li key={item.label}><a href={item.href} onClick={closeNavigation} {...(item.href.startsWith("https:") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{item.label}</a></li>)}</ul>
+          <ul data-motion-panel id={`header-submenu-${index}`} className="absolute top-full -left-4 z-10 m-0 max-h-[calc(100svh-145px)] w-max min-w-[245px] max-w-[340px] list-none overflow-y-auto rounded-b-2xl border border-t-2 border-primary/25 border-t-primary bg-white p-2 shadow-[0_18px_40px_#49301e26] backdrop-blur-xl group-nth-last-[-n+2]/nav:right-[-16px] group-nth-last-[-n+2]/nav:left-auto [&[hidden]]:hidden [&_a]:block [&_a]:rounded-lg [&_a]:px-3 [&_a]:py-[11px] [&_a]:text-xs [&_a]:leading-relaxed [&_a]:wrap-anywhere [&_a]:text-[#302219] [&_a:hover]:bg-primary/10 [&_a:hover]:text-primary max-[1100px]:static max-[1100px]:my-2 max-[1100px]:max-h-none max-[1100px]:w-full max-[1100px]:min-w-0 max-[1100px]:max-w-none max-[1100px]:border-0 max-[1100px]:border-l-2 max-[1100px]:p-0 max-[1100px]:pl-3 max-[1100px]:shadow-none max-[1100px]:[&_a]:p-3" hidden={active !== group.label}>{group.items.map(item => <li key={item.label}><a href={item.href} onClick={closeNavigation} {...(item.href.startsWith("https:") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{item.label}</a></li>)}</ul>
         </li>)}</ul>
       </nav>
-      <div className={styles.actions}>
-        <button ref={searchButton} type="button" aria-label={searchOpen ? "Tutup pencarian" : "Buka pencarian"} aria-expanded={searchOpen} aria-controls="header-search" className={styles.icon} onClick={() => { setSearchOpen(!searchOpen); setActive(null); setOpen(false); }}>{searchOpen ? <X size={20} /> : <Search size={20} />}</button>
-        <button type="button" aria-label={open ? "Tutup menu" : "Buka menu"} aria-expanded={open} aria-controls="header-navigation" onClick={() => { setOpen(!open); setActive(null); setSearchOpen(false); }} className={styles.mobileToggle}>{open ? <X /> : <Menu />}</button>
+      <div className="flex shrink-0 items-center gap-1.5">
+        <button ref={searchButton} type="button" aria-label={searchOpen ? "Tutup pencarian" : "Buka pencarian"} aria-expanded={searchOpen} aria-controls="header-search" className="inline-flex size-[42px] cursor-pointer items-center justify-center rounded-xl border border-primary/25 bg-white/25 p-0 text-foreground hover:bg-surface-muted aria-expanded:border-primary aria-expanded:bg-surface-muted aria-expanded:text-primary" onClick={() => { setSearchOpen(!searchOpen); setActive(null); setOpen(false); }}>{searchOpen ? <X size={20} /> : <Search size={20} />}</button>
+        <button type="button" aria-label={open ? "Tutup menu" : "Buka menu"} aria-expanded={open} aria-controls="header-navigation" onClick={() => { setOpen(!open); setActive(null); setSearchOpen(false); }} className="hidden size-[42px] cursor-pointer items-center justify-center rounded-xl border border-primary/25 bg-white/25 p-0 text-foreground hover:bg-surface-muted max-[1100px]:inline-flex">{open ? <X /> : <Menu />}</button>
       </div>
     </div>
-    {searchOpen && <div id="header-search" className={styles.search}>
+    {searchOpen && <div data-motion="menu" id="header-search" className="absolute top-[calc(100%+10px)] right-[max(24px,calc((100%-1280px)/2))] w-[min(520px,calc(100%-48px))] rounded-2xl border border-primary/25 bg-white p-[22px] text-[#302219] shadow-[0_20px_55px_#49301e2b,inset_0_1px_0_#ffffff80] backdrop-blur-2xl max-[600px]:top-[calc(100%+8px)] max-[600px]:right-3 max-[600px]:w-[calc(100%-24px)] max-[600px]:p-4">
       <form action="/#portofolio" method="get" role="search" aria-label="Pencarian portofolio">
-        <div className={styles.searchHeading}>
+        <div className="mb-4 flex items-center justify-between gap-4 [&>label]:text-sm [&>label]:leading-normal [&>label]:font-semibold">
           <label htmlFor="site-search">Temukan inspirasi Anda</label>
-          <button type="button" className={styles.searchClose} aria-label="Tutup pencarian" onClick={() => { setSearchOpen(false); searchButton.current?.focus(); }}><X size={18} /></button>
+          <button type="button" className="inline-flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent p-0 text-muted-foreground hover:bg-surface-muted hover:text-foreground" aria-label="Tutup pencarian" onClick={() => { setSearchOpen(false); searchButton.current?.focus(); }}><X size={18} /></button>
         </div>
-        <div className={styles.searchField}>
+        <div className="flex min-h-14 items-center gap-2.5 rounded-xl border border-primary/30 bg-white/55 p-[5px] pl-3.5 focus-within:border-primary focus-within:shadow-[0_0_0_3px_#92764e18] [&>svg]:shrink-0 [&>svg]:text-muted-foreground [&>input]:min-w-0 [&>input]:flex-1 [&>input]:border-0 [&>input]:bg-transparent [&>input]:py-2.5 [&>input]:text-sm [&>input]:leading-normal [&>input]:text-foreground [&>input]:outline-none [&>input]:placeholder:text-muted-foreground/80 max-[600px]:flex-wrap max-[600px]:[&>input]:basis-[calc(100%-40px)] max-[600px]:[&>input]:text-base">
           <Search size={18} aria-hidden="true" />
           <input id="site-search" type="search" name="q" autoFocus required maxLength={100} aria-describedby="search-hint" placeholder="Cari desain, proyek, atau kota" />
-          <button type="submit" className={styles.searchSubmit}>Cari <ArrowUpRight size={16} aria-hidden="true" /></button>
+          <button type="submit" className="inline-flex min-h-11 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-lg border-0 bg-primary px-4 py-2.5 text-xs font-semibold whitespace-nowrap text-primary-foreground hover:brightness-90 max-[600px]:w-full">Cari <ArrowUpRight size={16} aria-hidden="true" /></button>
         </div>
-        <p id="search-hint" className={styles.searchHint}>Contoh: modern, interior, atau Jakarta.</p>
+        <p id="search-hint" className="mt-3 mb-0 text-[11px] leading-relaxed text-muted-foreground max-[600px]:text-xs">Contoh: modern, interior, atau Jakarta.</p>
       </form>
     </div>}
   </header>;

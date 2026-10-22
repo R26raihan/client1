@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-border-subtle bg-accent text-accent-foreground">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="flex flex-col gap-4">
+        <div data-motion="text" className="flex flex-col gap-4">
           <Link href="#top" className="font-serif text-xl font-semibold">
             {siteConfig.name}
           </Link>
@@ -22,7 +22,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="rounded-full border border-accent-foreground/20 p-2 transition-colors hover:border-primary hover:text-primary"
+              className="rounded-full border border-accent-foreground/20 p-2 transition-[transform,color] duration-200 hover:-translate-y-1 active:scale-95 motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:active:scale-100 hover:border-primary hover:text-primary"
             >
               <InstagramIcon size={18} />
             </a>
@@ -31,7 +31,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok"
-              className="rounded-full border border-accent-foreground/20 p-2 transition-colors hover:border-primary hover:text-primary"
+              className="rounded-full border border-accent-foreground/20 p-2 transition-[transform,color] duration-200 hover:-translate-y-1 active:scale-95 motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:active:scale-100 hover:border-primary hover:text-primary"
             >
               <TiktokIcon size={18} />
             </a>
@@ -40,14 +40,14 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
-              className="rounded-full border border-accent-foreground/20 p-2 transition-colors hover:border-primary hover:text-primary"
+              className="rounded-full border border-accent-foreground/20 p-2 transition-[transform,color] duration-200 hover:-translate-y-1 active:scale-95 motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:active:scale-100 hover:border-primary hover:text-primary"
             >
               <YoutubeIcon size={18} />
             </a>
           </div>
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div data-motion="text" className="flex flex-col gap-3">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-accent-foreground/60">
             Navigasi
           </h3>
@@ -62,7 +62,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div data-motion="text" className="flex flex-col gap-3">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-accent-foreground/60">
             Layanan
           </h3>
@@ -72,7 +72,7 @@ export default function Footer() {
           <span className="text-sm text-accent-foreground/80">RAB &amp; Konsultasi</span>
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div data-motion="text" className="flex flex-col gap-3">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-accent-foreground/60">
             Kontak
           </h3>

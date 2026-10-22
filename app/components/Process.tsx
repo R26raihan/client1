@@ -15,9 +15,9 @@ export default function Process() {
         <SectionHeading eyebrow="Proses Kerja" title="Langkah yang jelas, dari awal hingga serah terima" description="Anda terlibat di setiap keputusan penting, dengan komunikasi terbuka sepanjang perjalanan membangun." />
         <ol className="relative mt-14 grid gap-8 lg:grid-cols-5">
           {steps.map((step, index) => (
-            <li key={step.title} className="relative flex gap-5 lg:flex-col">
+            <li data-motion="step" key={step.title} className="group relative flex gap-5 lg:flex-col">
               {index < steps.length - 1 && <span aria-hidden="true" className="absolute top-12 bottom-[-2rem] left-6 w-px bg-border-subtle lg:top-6 lg:right-[-2rem] lg:bottom-auto lg:left-12 lg:h-px lg:w-auto" />}
-              <span className="relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">{String(index + 1).padStart(2, "0")}</span>
+              <span className="relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full bg-primary transition-transform duration-300 group-hover:scale-110 motion-reduce:transition-none motion-reduce:group-hover:scale-100 text-sm font-semibold text-primary-foreground">{String(index + 1).padStart(2, "0")}</span>
               <div><h3 className="mb-3 font-serif text-xl font-medium">{step.title}</h3><p className="text-sm leading-relaxed text-muted-foreground">{step.description}</p></div>
             </li>
           ))}

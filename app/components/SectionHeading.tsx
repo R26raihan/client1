@@ -17,16 +17,16 @@ export default function SectionHeading({
     <div
       className={`flex flex-col gap-4 ${isCenter ? "items-center text-center" : "items-start text-left"}`}
     >
-      <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+      <span data-motion="text" className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
         {eyebrow}
       </span>
-      <h2
+      <h2 data-motion="title"
         className={`font-serif text-3xl font-medium leading-tight text-foreground sm:text-4xl ${isCenter ? "max-w-2xl" : "max-w-xl"}`}
       >
         {title}
       </h2>
       {description ? (
-        <p
+        <p data-motion="text"
           className={`text-base text-muted-foreground sm:text-lg ${isCenter ? "max-w-xl" : "max-w-lg"}`}
         >
           {description}

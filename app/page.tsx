@@ -1,6 +1,7 @@
 import StudioOverview from "./components/StudioOverview";
 import ProjectSummary from "./components/ProjectSummary";
 import Hero from "./components/Hero";
+import Deliverables from "./components/Deliverables";
 import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
 import Process from "./components/Process";
@@ -14,10 +15,11 @@ export default function Home() {
       <Hero />
       <ProjectSummary />
       <Portfolio />
+      <Deliverables />
+      <Testimonials />
       <Services />
       <StudioOverview />
       <Process />
-      <Testimonials />
       <Contact />
       <FAQ />
     </>
