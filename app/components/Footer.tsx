@@ -54,7 +54,7 @@ export default function Footer() {
           {siteConfig.navLinks.map((link) => (
             <a
               key={link.href}
-              href={link.href === "#portofolio" ? "/portofolio" : `/${link.href}`}
+              href={link.href === "#portofolio" ? "/portofolio" : link.href.startsWith("/") ? link.href : `/${link.href}`}
               className="inline-flex min-h-12 items-center text-lg text-accent-foreground/95 transition-colors hover:text-primary"
             >
               {link.label}

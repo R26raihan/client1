@@ -16,10 +16,11 @@ export const siteConfig = {
     youtube: "https://youtube.com/@lokaarchitect",
   },
   navLinks: [
+    { label: "Tentang Kami", href: "/tentang-kami" },
     { label: "Layanan", href: "#layanan" },
     { label: "Portofolio", href: "#portofolio" },
     { label: "Proses Kerja", href: "#proses" },
-    { label: "Testimoni", href: "#testimoni" },
+    { label: "Testimoni", href: "/testimoni" },
     { label: "FAQ", href: "#faq" },
     { label: "Kontak", href: "#kontak" },
   ],

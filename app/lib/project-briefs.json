@@ -1,0 +1,600 @@
+[
+  {
+    "slug": "villa-teras-teduh",
+    "style": "Villa Tropis",
+    "land": "16 m × 30 m",
+    "beds": 3,
+    "baths": 3,
+    "powder": 1,
+    "maid": 1,
+    "cars": 2,
+    "floors": [
+      {
+        "name": "Lantai 1",
+        "description": "Ruang berlibur yang menyatu dengan taman",
+        "rooms": [
+          "Teras dan Foyer",
+          "Ruang Keluarga",
+          "Ruang Makan dan Pantry",
+          "Kamar Tidur Utama (1)",
+          "Kamar Mandi Utama (1)",
+          "Kamar Tidur Tamu (2)",
+          "Kamar Mandi Tamu (2)",
+          "Toilet Tamu (1)",
+          "Kamar ART (1)",
+          "Dapur Servis",
+          "Laundry",
+          "Kolam Renang dan Deck",
+          "Carport (2 mobil)"
+        ]
+      }
+    ],
+    "story": [
+      "Area komunal disusun menghadap kolam dan taman agar kegiatan makan, bersantai, dan berkumpul tetap terhubung. Teras beratap menjadi ruang transisi yang nyaman antara interior dan area luar.",
+      "Palet kayu, batu bertekstur, serta warna netral membentuk suasana villa yang tenang. Bukaan dapat diatur untuk menyeimbangkan privasi, cahaya, dan hubungan dengan taman."
+    ],
+    "gallery": [
+      "villa",
+      "living-room",
+      "interior",
+      "courtyard"
+    ],
+    "videoId": "31dij_IQpek",
+    "tourId": "lebombo"
+  },
+  {
+    "slug": "ruang-untuk-pulang",
+    "style": "Interior Kontemporer Hangat",
+    "land": "Lingkup interior — mengikuti bangunan eksisting",
+    "beds": 2,
+    "baths": 2,
+    "powder": 0,
+    "maid": 0,
+    "cars": 0,
+    "floors": [
+      {
+        "name": "Area Interior",
+        "description": "Penataan ulang ruang pada satu level",
+        "rooms": [
+          "Area Masuk dan Rak Sepatu",
+          "Ruang Keluarga",
+          "Ruang Makan",
+          "Pantry",
+          "Kamar Tidur Utama (1)",
+          "Kamar Mandi Utama (1)",
+          "Kamar Tidur Anak (1)",
+          "Kamar Mandi Bersama (1)",
+          "Sudut Kerja",
+          "Lemari Penyimpanan"
+        ]
+      }
+    ],
+    "story": [
+      "Penataan dimulai dari alur pulang: area masuk menampung barang harian sebelum penghuni menuju ruang keluarga. Ruang makan dan pantry ditempatkan berdekatan agar aktivitas keluarga terasa praktis.",
+      "Warna krem, aksen kayu, dan kain bertekstur lembut dipadukan dengan furnitur berukuran proporsional. Penyimpanan terintegrasi membantu ruang tetap rapi tanpa mengurangi area bergerak."
+    ],
+    "gallery": [
+      "interior",
+      "living-room",
+      "industrial-space",
+      "courtyard"
+    ],
+    "videoId": "SHUkhFUK2jI",
+    "tourId": "hotel_room"
+  },
+  {
+    "slug": "casa-cahaya",
+    "style": "Modern Tropis",
+    "land": "12 m × 20 m",
+    "beds": 3,
+    "baths": 3,
+    "powder": 1,
+    "maid": 0,
+    "cars": 2,
+    "floors": [
+      {
+        "name": "Lantai 1",
+        "description": "Ruang sosial dan aktivitas sehari-hari",
+        "rooms": [
+          "Foyer",
+          "Ruang Tamu",
+          "Ruang Keluarga",
+          "Ruang Makan",
+          "Pantry",
+          "Dapur Servis",
+          "Kamar Tidur Tamu (1)",
+          "Kamar Mandi Tamu (1)",
+          "Toilet Tamu (1)",
+          "Taman Belakang",
+          "Carport (2 mobil)"
+        ]
+      },
+      {
+        "name": "Lantai 2",
+        "description": "Privasi keluarga di lantai atas",
+        "rooms": [
+          "Kamar Tidur Utama (1)",
+          "Kamar Mandi Utama (1)",
+          "Kamar Tidur Anak (1)",
+          "Kamar Mandi Anak (1)",
+          "Ruang Belajar",
+          "Balkon",
+          "Laundry"
+        ]
+      }
+    ],
+    "story": [
+      "Lantai dasar menjadi pusat kegiatan bersama dengan ruang keluarga yang mengarah ke taman belakang. Kamar tamu ditempatkan di bawah, sementara area istirahat keluarga berada di lantai atas.",
+      "Permainan bidang solid dan bukaan menciptakan fasad yang sederhana. Kisi peneduh serta pengaturan orientasi jendela menjadi bagian pembahasan untuk menjaga keseimbangan cahaya dan privasi."
+    ],
+    "gallery": [
+      "modern",
+      "interior",
+      "living-room",
+      "courtyard"
+    ],
+    "videoId": "OlmhrVuLWbw",
+    "tourId": "lebombo"
+  },
+  {
+    "slug": "courtyard-house",
+    "style": "Tropis dengan Courtyard",
+    "land": "14 m × 22 m",
+    "beds": 3,
+    "baths": 2,
+    "powder": 1,
+    "maid": 0,
+    "cars": 2,
+    "floors": [
+      {
+        "name": "Lantai 1",
+        "description": "Aktivitas mengitari taman tengah",
+        "rooms": [
+          "Teras Masuk",
+          "Foyer",
+          "Courtyard",
+          "Ruang Keluarga",
+          "Ruang Makan",
+          "Pantry",
+          "Dapur",
+          "Kamar Tidur Utama (1)",
+          "Kamar Mandi Utama (1)",
+          "Kamar Tidur Anak (2)",
+          "Kamar Mandi Bersama (1)",
+          "Toilet Tamu (1)",
+          "Laundry",
+          "Carport (2 mobil)"
+        ]
+      }
+    ],
+    "story": [
+      "Taman tengah menjadi orientasi utama rancangan. Ruang keluarga, ruang makan, dan koridor diarahkan ke courtyard sehingga perpindahan antar ruang tetap memiliki hubungan visual dengan vegetasi.",
+      "Perbedaan kedalaman teras, material lantai, dan bukaan dipakai untuk menandai transisi ruang. Area privat diletakkan menjauh dari pintu masuk agar kegiatan menerima tamu tidak mengganggu kamar."
+    ],
+    "gallery": [
+      "courtyard",
+      "living-room",
+      "interior",
+      "villa"
+    ],
+    "videoId": "SHUkhFUK2jI",
+    "tourId": "lebombo"
+  },
+  {
+    "slug": "the-quiet-living",
+    "style": "Interior Minimalis Hangat",
+    "land": "Lingkup interior — mengikuti bangunan eksisting",
+    "beds": 2,
+    "baths": 2,
+    "powder": 1,
+    "maid": 0,
+    "cars": 0,
+    "floors": [
+      {
+        "name": "Area Interior",
+        "description": "Ruang keluarga dan area privat",
+        "rooms": [
+          "Area Masuk",
+          "Ruang Keluarga",
+          "Sudut Baca",
+          "Ruang Makan",
+          "Pantry",
+          "Kamar Tidur Utama (1)",
+          "Kamar Mandi Utama (1)",
+          "Kamar Tidur Tamu (1)",
+          "Kamar Mandi Tamu (1)",
+          "Toilet Tamu (1)",
+          "Ruang Kerja",
+          "Penyimpanan Terintegrasi"
+        ]
+      }
+    ],
+    "story": [
+      "Ruang keluarga diberi area duduk yang lapang dan sudut baca yang lebih tenang. Jalur sirkulasi dijaga sederhana agar furnitur tidak memotong akses menuju ruang makan dan kamar.",
+      "Tekstur alami menjadi fokus utama, dengan warna yang tenang dan pencahayaan berlapis untuk kegiatan berbeda. Furnitur serta elemen penyimpanan dirancang saling melengkapi agar tampilan terasa bersih."
+    ],
+    "gallery": [
+      "living-room",
+      "interior",
+      "industrial-space",
+      "courtyard"
+    ],
+    "videoId": "SHUkhFUK2jI",
+    "tourId": "hotel_room"
+  },
+  {
+    "slug": "classic-white-residence",
+    "style": "Klasik Tropis",
+    "land": "18 m × 25 m",
+    "beds": 4,
+    "baths": 4,
+    "powder": 1,
+    "maid": 1,
+    "cars": 2,
+    "floors": [
+      {
+        "name": "Lantai 1",
+        "description": "Area penerima dan ruang bersama",
+        "rooms": [
+          "Teras Berkolom",
+          "Foyer",
+          "Ruang Tamu",
+          "Ruang Keluarga",
+          "Ruang Makan",
+          "Pantry",
+          "Dapur Servis",
+          "Kamar Tidur Tamu (1)",
+          "Kamar Mandi Tamu (1)",
+          "Toilet Tamu (1)",
+          "Kamar ART (1)",
+          "Taman",
+          "Carport (2 mobil)"
+        ]
+      },
+      {
+        "name": "Lantai 2",
+        "description": "Kamar keluarga dan balkon",
+        "rooms": [
+          "Kamar Tidur Utama (1)",
+          "Kamar Mandi Utama (1)",
+          "Kamar Tidur Anak (2)",
+          "Kamar Mandi Anak (2)",
+          "Ruang Keluarga Atas",
+          "Balkon",
+          "Laundry"
+        ]
+      }
+    ],
+    "story": [
+      "Komposisi fasad yang simetris memberi orientasi masuk yang jelas. Foyer menjadi penghubung antara ruang menerima tamu dan kegiatan keluarga, dengan area servis yang memiliki akses terpisah.",
+      "Warna putih dipadukan dengan batu bertekstur halus dan detail profil yang terukur. Teras serta bukaan yang terlindung menjaga pendekatan klasik tetap relevan untuk penggunaan di iklim tropis."
+    ],
+    "gallery": [
+      "classic",
+      "interior",
+      "living-room",
+      "courtyard"
+    ],
+    "videoId": "SHUkhFUK2jI",
+    "tourId": "lebombo"
+  },
+  {
+    "slug": "the-urban-loft",
+    "style": "Modern Industrial",
+    "land": "10 m × 15 m",
+    "beds": 2,
+    "baths": 2,
+    "powder": 1,
+    "maid": 0,
+    "cars": 1,
+    "floors": [
+      {
+        "name": "Lantai 1",
+        "description": "Ruang komunal dengan tinggi terbuka",
+        "rooms": [
+          "Area Masuk",
+          "Ruang Keluarga Double Height",
+          "Ruang Makan",
+          "Pantry",
+          "Dapur",
+          "Kamar Tidur Tamu (1)",
+          "Kamar Mandi Tamu (1)",
+          "Toilet Tamu (1)",
+          "Area Servis",
+          "Carport (1 mobil)"
+        ]
+      },
+      {
+        "name": "Mezzanine",
+        "description": "Area kerja dan istirahat",
+        "rooms": [
+          "Kamar Tidur Utama (1)",
+          "Kamar Mandi Utama (1)",
+          "Ruang Kerja Terbuka",
+          "Jembatan Sirkulasi",
+          "Penyimpanan"
+        ]
+      }
+    ],
+    "story": [
+      "Ketinggian ruang menjadi elemen utama loft ini. Ruang keluarga terhubung secara visual dengan mezzanine, sementara kamar utama ditempatkan lebih privat di lantai atas.",
+      "Baja berwarna gelap, kayu, dan bidang netral disusun untuk mempertahankan karakter industrial tanpa membuat ruang terasa berat. Detail tangga dan railing menjadi bagian penting pengalaman antar level."
+    ],
+    "gallery": [
+      "industrial-loft",
+      "industrial-space",
+      "living-room",
+      "interior"
+    ],
+    "videoId": "_QCVOjAmtRo",
+    "tourId": "artist_workshop"
+  },
+  {
+    "slug": "loft-kayu-baja",
+    "style": "Industrial Hangat",
+    "land": "10 m × 18 m",
+    "beds": 2,
+    "baths": 2,
+    "powder": 1,
+    "maid": 0,
+    "cars": 1,
+    "floors": [
+      {
+        "name": "Lantai 1",
+        "description": "Ruang aktivitas dengan material terekspos",
+        "rooms": [
+          "Foyer",
+          "Ruang Keluarga",
+          "Ruang Makan",
+          "Pantry",
+          "Dapur",
+          "Kamar Tidur Tamu (1)",
+          "Kamar Mandi Tamu (1)",
+          "Toilet Tamu (1)",
+          "Laundry",
+          "Teras Belakang",
+          "Carport (1 mobil)"
+        ]
+      },
+      {
+        "name": "Lantai 2",
+        "description": "Ruang privat dan studio",
+        "rooms": [
+          "Kamar Tidur Utama (1)",
+          "Kamar Mandi Utama (1)",
+          "Studio Kerja",
+          "Balkon Dalam",
+          "Gudang"
+        ]
+      }
+    ],
+    "story": [
+      "Rancangan memadukan ruang komunal terbuka dengan studio kerja di lantai atas. Jendela tinggi menjadi penghubung visual antar level dan membantu memperjelas karakter ruang.",
+      "Aksen kayu digunakan pada bidang yang berdekatan dengan aktivitas penghuni, sementara baja gelap membingkai tangga dan elemen struktur. Kontras material dikendalikan agar suasana tetap nyaman."
+    ],
+    "gallery": [
+      "industrial-space",
+      "industrial-loft",
+      "interior",
+      "living-room"
+    ],
+    "videoId": "_QCVOjAmtRo",
+    "tourId": "artist_workshop"
+  },
+  {
+    "slug": "casa-terakota",
+    "style": "Mediteran Tropis",
+    "land": "16 m × 25 m",
+    "beds": 3,
+    "baths": 3,
+    "powder": 1,
+    "maid": 1,
+    "cars": 2,
+    "floors": [
+      {
+        "name": "Lantai 1",
+        "description": "Teras lengkung dan area komunal",
+        "rooms": [
+          "Teras Lengkung",
+          "Foyer",
+          "Ruang Keluarga",
+          "Ruang Makan",
+          "Pantry",
+          "Dapur Servis",
+          "Kamar Tidur Tamu (1)",
+          "Kamar Mandi Tamu (1)",
+          "Toilet Tamu (1)",
+          "Kamar ART (1)",
+          "Taman",
+          "Carport (2 mobil)"
+        ]
+      },
+      {
+        "name": "Lantai 2",
+        "description": "Area istirahat keluarga",
+        "rooms": [
+          "Kamar Tidur Utama (1)",
+          "Kamar Mandi Utama (1)",
+          "Kamar Tidur Anak (1)",
+          "Kamar Mandi Anak (1)",
+          "Ruang Duduk",
+          "Balkon",
+          "Laundry"
+        ]
+      }
+    ],
+    "story": [
+      "Teras dengan bukaan melengkung membentuk transisi dari taman menuju ruang keluarga. Ruang makan dan pantry ditempatkan dekat area luar untuk mendukung kegiatan berkumpul.",
+      "Warna tanah, terakota, serta dinding terang menjadi dasar palet rancangan. Detail lengkung dipakai pada titik tertentu agar bangunan tetap terasa ringan dan tidak kehilangan hubungan dengan taman."
+    ],
+    "gallery": [
+      "mediterranean-house",
+      "mediterranean-villa",
+      "interior",
+      "living-room"
+    ],
+    "videoId": "31dij_IQpek",
+    "tourId": "lebombo"
+  },
+  {
+    "slug": "villa-palma",
+    "style": "Villa Mediteran Tropis",
+    "land": "20 m × 25 m",
+    "beds": 4,
+    "baths": 4,
+    "powder": 1,
+    "maid": 1,
+    "cars": 2,
+    "floors": [
+      {
+        "name": "Lantai 1",
+        "description": "Ruang bersama menghadap kolam",
+        "rooms": [
+          "Teras",
+          "Foyer",
+          "Lounge",
+          "Ruang Makan",
+          "Pantry",
+          "Dapur Servis",
+          "Kamar Tidur Tamu (2)",
+          "Kamar Mandi Tamu (2)",
+          "Toilet Tamu (1)",
+          "Kamar ART (1)",
+          "Kolam Renang dan Deck",
+          "Carport (2 mobil)"
+        ]
+      },
+      {
+        "name": "Lantai 2",
+        "description": "Suite dan area bersantai",
+        "rooms": [
+          "Kamar Tidur Utama (1)",
+          "Kamar Mandi Utama (1)",
+          "Kamar Tidur Tamu (1)",
+          "Kamar Mandi Tamu (1)",
+          "Ruang Duduk",
+          "Teras Atas",
+          "Laundry"
+        ]
+      }
+    ],
+    "story": [
+      "Kolam renang menjadi orientasi lounge, ruang makan, dan teras. Kamar pada dua level memberi pilihan kedekatan dengan aktivitas bersama maupun suasana istirahat yang lebih privat.",
+      "Dinding putih dan aksen bertekstur dipadukan dengan bukaan melengkung yang membingkai pemandangan. Area duduk luar dirancang sebagai perpanjangan ruang dalam untuk kegiatan santai."
+    ],
+    "gallery": [
+      "mediterranean-villa",
+      "mediterranean-house",
+      "villa",
+      "living-room"
+    ],
+    "videoId": "31dij_IQpek",
+    "tourId": "hotel_room"
+  },
+  {
+    "slug": "american-garden-house",
+    "style": "American Tropis",
+    "land": "15 m × 24 m",
+    "beds": 3,
+    "baths": 3,
+    "powder": 1,
+    "maid": 0,
+    "cars": 2,
+    "floors": [
+      {
+        "name": "Lantai 1",
+        "description": "Teras depan dan kehidupan keluarga",
+        "rooms": [
+          "Front Porch",
+          "Foyer",
+          "Ruang Tamu",
+          "Ruang Keluarga",
+          "Ruang Makan",
+          "Pantry",
+          "Dapur",
+          "Kamar Tidur Tamu (1)",
+          "Kamar Mandi Tamu (1)",
+          "Toilet Tamu (1)",
+          "Taman Belakang",
+          "Carport (2 mobil)"
+        ]
+      },
+      {
+        "name": "Lantai 2",
+        "description": "Area privat keluarga",
+        "rooms": [
+          "Kamar Tidur Utama (1)",
+          "Kamar Mandi Utama (1)",
+          "Kamar Tidur Anak (1)",
+          "Kamar Mandi Anak (1)",
+          "Ruang Belajar",
+          "Laundry"
+        ]
+      }
+    ],
+    "story": [
+      "Teras depan menjadi tempat menyambut tamu sekaligus ruang duduk informal. Di bagian dalam, ruang keluarga dan ruang makan diarahkan ke taman belakang agar kegiatan bersama tetap memiliki suasana hijau.",
+      "Atap pelana, garis horizontal pada fasad, dan warna lembut membentuk karakter American yang akrab. Pengolahan teras dan peneduh dibahas agar referensi gaya tetap sesuai kebutuhan iklim setempat."
+    ],
+    "gallery": [
+      "american-house",
+      "american-porch",
+      "living-room",
+      "interior"
+    ],
+    "videoId": "OlmhrVuLWbw",
+    "tourId": "lebombo"
+  },
+  {
+    "slug": "the-welcoming-porch",
+    "style": "American Country Tropis",
+    "land": "14 m × 22 m",
+    "beds": 3,
+    "baths": 2,
+    "powder": 1,
+    "maid": 0,
+    "cars": 2,
+    "floors": [
+      {
+        "name": "Lantai 1",
+        "description": "Teras luas dan ruang berkumpul",
+        "rooms": [
+          "Porch Depan",
+          "Foyer",
+          "Ruang Keluarga",
+          "Ruang Makan",
+          "Pantry",
+          "Dapur",
+          "Kamar Tidur Tamu (1)",
+          "Toilet Tamu (1)",
+          "Teras Belakang",
+          "Carport (2 mobil)"
+        ]
+      },
+      {
+        "name": "Lantai 2",
+        "description": "Kamar keluarga dan ruang baca",
+        "rooms": [
+          "Kamar Tidur Utama (1)",
+          "Kamar Mandi Utama (1)",
+          "Kamar Tidur Anak (1)",
+          "Kamar Mandi Bersama (1)",
+          "Ruang Baca",
+          "Laundry"
+        ]
+      }
+    ],
+    "story": [
+      "Porch menjadi pusat karakter rumah sekaligus batas yang lembut antara halaman dan ruang dalam. Area menerima tamu dibuat dekat pintu masuk, dengan sirkulasi yang menerus menuju ruang berkumpul keluarga.",
+      "Batu bertekstur, kayu, dan warna netral menghadirkan suasana yang hangat. Proporsi kolom, tangga teras, serta railing dipertimbangkan sebagai satu komposisi yang menyambut penghuni."
+    ],
+    "gallery": [
+      "american-porch",
+      "american-house",
+      "interior",
+      "living-room"
+    ],
+    "videoId": "OlmhrVuLWbw",
+    "tourId": "lebombo"
+  }
+]

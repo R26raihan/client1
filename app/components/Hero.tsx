@@ -5,7 +5,7 @@ import { waLink } from "../lib/site-config";
 export default function Hero() {
   return <>
     <section id="top" className="relative isolate z-0 overflow-hidden h-[calc(100svh-125px)] min-h-[800px] max-h-[900px] bg-[#343a32] text-white max-[600px]:h-[calc(90svh-110px)] max-[600px]:min-h-[900px]">
-      <Image src="/images/residence.jpg" alt="Rumah modern dengan bukaan kaca, taman tropis, dan kolam renang" fill preload sizes="100vw" data-motion="hero" className="object-cover" />
+      <Image src="/images/residence.webp" alt="Rumah modern dengan bukaan kaca, taman tropis, dan kolam renang" fill preload sizes="100vw" data-motion="hero" className="object-cover" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,#101a16c9,#14201945_65%,#101a1620),linear-gradient(0deg,#101a16a8,transparent_45%)]" />
       <div className="absolute inset-x-[7vw] top-[21%] max-[600px]:top-[12%] [&>h1]:my-6 [&>h1]:font-serif [&>h1]:text-[clamp(42px,4.8vw,76px)] [&>h1]:leading-[1.15] [&>h1]:font-normal [&>h1]:tracking-[-2px] [&_em]:font-normal [&_em]:text-white [&>p]:text-lg [&>p]:leading-[1.9] [&>p]:text-white max-[600px]:[&>h1]:tracking-[-1.5px] max-[600px]:[&>p]:text-[15px]">
         <span className="text-[15px] tracking-[3px] text-[#e4d7be]">ARSITEKTUR · INTERIOR · KONSTRUKSI</span>

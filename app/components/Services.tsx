@@ -1,6 +1,7 @@
 import { Armchair, BadgeCheck, Box, Calculator, Clock3, HardHat, House, RefreshCcw, ShieldCheck, Wallet } from "lucide-react";
 import { darkSectionTheme } from "../lib/theme";
-import { waLink } from "../lib/site-config";
+import Link from "next/link";
+import { servicePageHref } from "../lib/service-pages";
 import SectionHeading from "./SectionHeading";
 
 const services = [
@@ -32,7 +33,7 @@ export default function Services() {
               <span className="mb-6 inline-flex rounded-2xl border border-primary/10 bg-primary/8 p-3 text-primary"><Icon size={25} aria-hidden="true" /></span>
               <h3 className="mb-3 font-serif text-2xl font-medium">{title}</h3>
               <p className="text-lg leading-relaxed text-muted-foreground">{description}</p>
-              <a href={waLink(`Halo Loka Architect, saya ingin informasi mengenai ${title}.`)} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-base font-semibold text-primary underline-offset-4 hover:underline">Diskusikan layanan ini <span aria-hidden="true">↗</span></a>
+              <Link href={servicePageHref(id)} className="mt-5 inline-flex min-h-12 items-center gap-2 text-base font-semibold text-primary underline-offset-4 hover:underline">Lihat layanan & tarif <span aria-hidden="true">↗</span></Link>
             </article>
           ))}
         </div>
